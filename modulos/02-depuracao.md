@@ -4,30 +4,30 @@
 
 ## Objetivo
 
-Descobrir o que um código faz e por que ele quebrou — por investigação, não por tentativa e erro, e sem recorrer a ajuda externa antes de ter uma hipótese própria.
+Você descobrir o que um código faz e por que ele quebrou — por investigação, e não por tentativa e erro, sem recorrer a ajuda externa antes de ter uma hipótese sua.
 
-## Por que este módulo existe
+## Por que esse módulo existe
 
-Este é, disparado, o módulo mais importante da trilha inteira.
+Sendo bem honesto contigo: no meu ponto de vista, esse é o módulo mais importante da trilha inteira.
 
-Programar é, na prática, passar a maior parte do tempo entendendo código que já existe e descobrindo por que algo não funciona. Quem depura bem aprende qualquer linguagem sozinho; quem não depura fica travado para sempre, em qualquer linguagem, e vira dependente de alguém que desentrave.
+Programar, na prática, é passar a maior parte do tempo entendendo código que já existe e descobrindo por que alguma coisa não funciona. Ou seja, quem depura bem naturalmente aprende qualquer linguagem sozinho. E quem não depura fica travado, em qualquer linguagem, sempre dependendo de alguém para desentravar.
 
-A diferença entre um dev que evolui rápido e um que empaca quase nunca é quanto ele sabe. É o que ele faz nos primeiros cinco minutos depois que o erro aparece.
+Dito isso, eu acredito que a diferença entre quem evolui rápido e quem empaca quase nunca é o quanto a pessoa sabe. É o que ela faz nos primeiros cinco minutos depois que o erro apareceu.
 
 ## O que estudar
 
 **Rastrear código na mão (dry run)**
-- Simular a execução no papel, linha a linha, com uma tabela de variáveis
-- Uma coluna por variável, uma linha por iteração. Sem rodar, sem `console.log`
-- Parece coisa de faculdade e é a habilidade que mais separa quem entende do que só reconhece
+- Simular a execução no papel, linha por linha, com uma tabela de variáveis
+- Uma coluna por variável, uma linha por iteração. Sem rodar e sem `console.log`
+- Parece coisa de faculdade, mas é a habilidade que mais separa quem entende de quem só reconhece
 
 **Ler a mensagem de erro — de verdade**
-- Qual arquivo, qual linha, o que a mensagem literalmente diz
-- Stack trace: ler de baixo para cima, e achar a primeira linha que é código **seu**
-- Erros comuns e o que costumam significar de fato:
+- Qual arquivo, qual linha, o que a mensagem literalmente está dizendo
+- Stack trace: ler de baixo para cima e achar a primeira linha que é código **seu**
+- Os erros mais comuns e o que eles costumam significar de fato:
   - `undefined is not a function` — você chamou algo que não existe, geralmente por nome errado ou import faltando
-  - `cannot read property 'x' of undefined` — o objeto não chegou; o problema está *antes*, não na linha do erro
-  - `ReferenceError` vs. `TypeError` — a coisa não existe, ou existe e é de outro tipo
+  - `cannot read property 'x' of undefined` — o objeto não chegou; ou seja, o problema está *antes*, e não na linha do erro
+  - `ReferenceError` e `TypeError` — a coisa não existe, ou existe e é de outro tipo
 
 **Investigar**
 - `console.log` bem colocado: logue o **valor e o tipo**, e identifique o log
@@ -35,14 +35,14 @@ A diferença entre um dev que evolui rápido e um que empaca quase nunca é quan
 - **Isolar:** reduzir até o menor código que ainda reproduz o problema. Metade dos bugs se explica sozinha durante esse corte
 
 **O método**
-- Hipótese **antes** de mexer: "acho que é X; se for X, então Y deveria acontecer"
-- Testar a hipótese, não o palpite. Mudar cinco coisas ao mesmo tempo e ver se funcionou não é depurar — é sorteio, e não ensina nada
-- Quando a hipótese estava errada, isso é informação boa: você eliminou uma possibilidade
+- Hipótese **antes** de mexer: "eu acho que é X; caso seja X, então Y deveria acontecer"
+- Testar a hipótese, e não o palpite. Mudar cinco coisas ao mesmo tempo e ver se funcionou não é depurar, é sorteio — e não ensina nada
+- E quando a hipótese estiver errada, isso é informação boa: você eliminou uma possibilidade
 
 **Pedir ajuda ao mundo**
-- O que colar no buscador: a mensagem de erro sem os seus dados específicos
-- Ler resposta de fórum olhando **data e versão** — resposta de 2016 pode estar certa e obsoleta ao mesmo tempo
-- IA: **depois** da hipótese, pedindo explicação em vez de código pronto. "Por que isso acontece?" ensina; "me dá o código" não
+- O que colar no buscador: a mensagem de erro, sem os seus dados específicos
+- Ler resposta de fórum olhando **data e versão**. Uma resposta de 2016 pode estar certa e obsoleta ao mesmo tempo
+- IA: **depois** da hipótese, e pedindo explicação em vez de código pronto. "Por que isso acontece?" ensina; "me dá o código" não
 
 **Ler código dos outros**
 - Entrar num repositório desconhecido e localizar onde uma coisa acontece
@@ -50,36 +50,36 @@ A diferença entre um dev que evolui rápido e um que empaca quase nunca é quan
 
 ## Entregável
 
-Um **caderno de bugs**: 5 casos, cada um no seu próprio Pull Request, cada um com:
+Um **caderno de bugs**: 5 casos, cada um no seu próprio Pull Request, e cada um com:
 
 1. o que aconteceu (o sintoma)
 2. a mensagem de erro, na íntegra
 3. **a sua hipótese**, escrita antes de você corrigir
-4. como você testou a hipótese
+4. como você testou essa hipótese
 5. a causa real
 6. a correção
 
-Três dos bugs eu planto num código pequeno que te entrego. Os outros dois são bugs que aparecerem naturalmente no seu caminho — e vão aparecer.
+Três desses bugs eu planto num código pequeno que eu te entrego. Os outros dois são bugs que aparecerem naturalmente no seu caminho — e eles vão aparecer.
 
 O item 3 é o coração da entrega. Um caderno em que toda hipótese estava certa de primeira é um caderno mal preenchido: quer dizer que você escreveu depois de já saber a resposta.
 
 ## Passou quando
 
 - [ ] Rastreia um loop de ~15 linhas no papel e acerta o valor final, sem rodar
-- [ ] Nos 5 relatos, a hipótese vem antes da correção — e em pelo menos um deles a primeira hipótese estava errada, e você conta isso
+- [ ] Nos 5 relatos, a hipótese vem antes da correção — e em pelo menos um deles a primeira hipótese estava errada, e isso está registrado
 - [ ] Usou breakpoint pelo menos uma vez, não só `console.log`
-- [ ] Consegue pegar um erro e apontar a primeira linha do stack trace que é código seu
-- [ ] Em pelo menos 3 dos 5 casos, chegou na causa sem usar IA. Nos outros, o relato registra o que você perguntou e o que aprendeu com a resposta
+- [ ] Pega um erro e aponta a primeira linha do stack trace que é código seu
+- [ ] Em pelo menos 3 dos 5 casos, chegou na causa sem usar IA. Nos outros, o relato registra o que foi perguntado e o que se aprendeu com a resposta
 
 ## Onde estudar
 
-- [Chrome DevTools — depurar JavaScript](https://developer.chrome.com/docs/devtools/javascript) — leia **e** faça o passo a passo
-- [MDN — o que fez isso quebrar](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors) — a referência de erros de JavaScript, um por um
-- [How to Ask a Good Question](https://stackoverflow.com/help/how-to-ask) — do Stack Overflow. Vale mesmo que você nunca poste: ele descreve como organizar o que você já sabe sobre o problema, e isso sozinho resolve muita coisa
+- [Chrome DevTools — depurar JavaScript](https://developer.chrome.com/docs/devtools/javascript) — leia **e** faça o passo a passo junto
+- [MDN — referência de erros de JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors) — um por um, com explicação do que causa
+- [How to Ask a Good Question](https://stackoverflow.com/help/how-to-ask), do Stack Overflow. Vale mesmo que você nunca poste nada: ele descreve como organizar o que você já sabe sobre o problema, e só isso já resolve muita coisa
 
-## Erros comuns nesta fase
+## Erros comuns nessa fase
 
-- Ler a primeira linha do erro e já ir pro buscador. A mensagem geralmente diz mais do que parece
-- Mudar código no chute até funcionar. Se funcionar e você não souber por quê, o bug não foi resolvido — foi escondido, e volta depois
+- Ler a primeira linha do erro e já sair para o buscador. A mensagem geralmente diz bem mais do que parece
+- Mudar código no chute até funcionar. Caso funcione e você não saiba por quê, o bug não foi resolvido — foi escondido, e ele volta depois
 - Encher o arquivo de `console.log` sem plano e depois esquecer de tirar
-- Ir pra IA no minuto um. Não é proibido usar — é que ir cedo demais te tira exatamente o treino que este módulo existe para dar
+- Ir para a IA no minuto um. Não é proibido usar, de jeito nenhum — é que ir cedo demais tira de você exatamente o treino que esse módulo existe para dar

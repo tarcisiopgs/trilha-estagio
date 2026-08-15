@@ -1,21 +1,21 @@
 # Trilha de estágio
 
-Este repositório é o programa de estudo do estágio. Ele diz **o que estudar, em que ordem e como a gente sabe que você aprendeu**.
+Esse repositório é o programa de estudo do seu estágio. Ele diz o que estudar, em que ordem e como a gente vai saber que você aprendeu de verdade.
 
-O acompanhamento do seu progresso não fica aqui — fica no Todoist, no projeto compartilhado entre você e eu. Aqui fica o conteúdo.
+O acompanhamento do seu progresso não fica aqui — fica no Todoist, no projeto que eu compartilhei com você. Aqui mora o conteúdo.
 
 ## Como a trilha funciona
 
-A trilha tem 10 módulos, numerados. A ordem não é sugestão: cada módulo depende do anterior. Docker não faz sentido antes de você ter um serviço rodando e um banco pra conectar; Git não faz sentido antes de você saber o que é um arquivo oculto no terminal. Seguir a ordem é o que faz o tempo render.
+A trilha tem 10 módulos, numerados. A ordem não é sugestão, e eu queria deixar isso claro logo de cara: cada módulo depende do anterior. Não faz sentido você aprender Docker antes de ter um serviço rodando e um banco para conectar, do mesmo jeito que não faz sentido mexer com Git antes de saber o que é um arquivo oculto no terminal. Seguir a ordem é basicamente o que faz o seu tempo render.
 
 Cada módulo tem quatro partes:
 
 - **Objetivo** — o que você vai conseguir fazer no fim
-- **O que estudar** — os assuntos, na ordem em que fazem sentido
+- **O que estudar** — os assuntos, na ordem em que eles fazem sentido
 - **Entregável** — o que você produz e me manda
 - **Passou quando** — a lista objetiva que diz se acabou ou não
 
-Você não avança de módulo por tempo decorrido. Avança quando o "passou quando" está inteiro cumprido. Se levar mais tempo que o previsto, tudo bem — o problema seria avançar sem a base.
+Você não avança de módulo por tempo decorrido. Avança quando o "passou quando" estiver inteiro cumprido. Caso leve mais tempo do que a gente imaginou, tudo bem — o problema mesmo seria avançar sem a base.
 
 ## O mapa
 
@@ -33,40 +33,40 @@ Você não avança de módulo por tempo decorrido. Avança quando o "passou quan
 | 9 | Ambiente, Docker e deploy | 0, 4, 7 |
 | 10 | Aprofundamento | 9 |
 
-Os módulos 5 a 10 são publicados conforme você chegar perto deles.
+Os módulos 5 a 10 eu vou publicando conforme você for chegando perto deles.
 
-## A esteira: você vai trabalhar como se trabalha
+## A esteira: a gente vai trabalhar como se trabalha
 
-O conteúdo é estudo, mas o **jeito de entregar é o de trabalho real**. Isso é de propósito: metade do que se aprende num primeiro emprego não é linguagem, é o processo em volta dela.
+O conteúdo aqui é estudo, mas o **jeito de entregar é o de trabalho real**. Isso é de propósito. No meu ponto de vista, metade do que a gente aprende num primeiro emprego não é linguagem nem framework — é o processo em volta.
 
-A partir do módulo 1 você tem um repositório próprio — o seu caderno — e ele funciona assim:
+A partir do módulo 1 você tem um repositório seu, que é o seu caderno, e a gente trabalha assim:
 
 - nada vai direto na `main`
 - cada módulo vira uma issue
 - cada entrega é uma branch e um Pull Request
-- eu reviso o PR; nada é mergeado sem review
-- se eu pedir mudança, você atualiza a mesma branch e responde o comentário
+- eu reviso o seu PR, e nada é mergeado sem review
+- caso eu peça alguma mudança, você atualiza a mesma branch e responde o comentário
 
-Não é burocracia. É que você vai abrir dezenas de PRs até o fim do estágio, e no fim isso terá virado reflexo — que é exatamente o que se espera de quem chega numa equipe.
+Por mais que pareça burocracia no começo, não é. Você vai abrir dezenas de PRs até o fim do estágio, e naturalmente isso vira reflexo — que é exatamente o que se espera de quem chega numa equipe.
 
-**A cerimônia cresce junto com você.** Não é tudo desde o dia um:
+**A cerimônia cresce junto com você.** Não é tudo desde o primeiro dia:
 
 | A partir do módulo | O que entra |
 |---|---|
 | 1 | repositório, branch, PR, review |
 | 2 | issue antes do PR; a descrição diz o que ficou faltando |
-| 4 | revisão cruzada entre os estagiários, além da minha |
+| 4 | revisão cruzada entre vocês, além da minha |
 | 6 | CI rodando lint e teste no PR — o verde vira pré-requisito do meu review |
 | 8 | CI sério, e deploy entra na conversa |
 
 ## Três regras que valem a trilha inteira
 
-**1. Documentação oficial, em inglês.** Sempre que existir, a fonte é a documentação oficial do projeto, não vídeo dublado nem resumo de blog. Inglês técnico não se estuda em módulo separado — se aprende lendo todo dia, e em três meses de uso a diferença é enorme. Vídeo e curso servem, mas depois de você ter tentado a documentação.
+**1. Documentação oficial, em inglês.** Sempre que existir, eu preciso que a sua fonte seja a documentação oficial do projeto, e não vídeo dublado ou resumo de blog. Inglês técnico não se estuda em módulo separado, ele se aprende lendo todo dia — e em três meses de uso diário a diferença é enorme. Vídeo e curso servem, sim, mas depois que você já tiver tentado a documentação.
 
-**2. Commit e Pull Request em inglês. Comentário e conversa em português.** Mesma lógica da regra anterior, e é assim que funciona na maioria dos times.
+**2. Commit e Pull Request em inglês. Comentário e conversa em português.** Mesma lógica da regra anterior, e inclusive é assim que funciona na maioria dos times.
 
-**3. Você não sobe código que não sabe explicar.** Pode usar IA — mas depois de ter formado uma hipótese, e pedindo explicação em vez de código pronto. O teste é simples: se eu perguntar no review "por que você fez assim?", você precisa saber responder. Se não souber, ainda não é seu, e o módulo 2 existe justamente para resolver isso.
+**3. Você não sobe código que não sabe explicar.** Pode usar IA, sem problema nenhum — mas depois de ter formado a sua hipótese, e pedindo explicação em vez de código pronto. O teste é simples: caso eu pergunte no review "por que você fez assim?", você precisa saber responder. Se não souber, aquilo ainda não é seu, tá? O módulo 2 existe justamente para resolver isso.
 
 ## Quando travar
 
-Trave por, no máximo, 40 minutos numa mesma coisa. Passou disso, me chama. Chegar com "tentei A, B e C, minha hipótese é X, não sei como testar" é um ótimo pedido de ajuda — e é bem diferente de "não funciona".
+Eu preciso que você trave, no máximo, 40 minutos na mesma coisa. Passou disso, me chama. E chegar dizendo "tentei A, B e C, a minha hipótese é X, mas não sei como testar" é um ótimo pedido de ajuda — bem diferente de "não está funcionando".
