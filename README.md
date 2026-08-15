@@ -26,14 +26,16 @@ Você não avança de módulo por tempo decorrido. Avança quando o "passou quan
 | 2 | [Ler, rastrear e depurar código](modulos/02-depuracao.md) | 0 |
 | 3 | [HTTP e APIs na prática](modulos/03-http-e-apis.md) | 0, 2 |
 | 4 | [Dados e SQL](modulos/04-dados-e-sql.md) | 2 |
-| 5 | JavaScript e TypeScript pra valer | 2 |
-| 6 | Frontend com React | 3, 5 |
-| 7 | Backend com Node | 3, 4, 5 |
-| 8 | Testes automatizados | 7 |
-| 9 | Ambiente, Docker e deploy | 0, 4, 7 |
-| 10 | Aprofundamento | 9 |
+| 5 | [JavaScript e TypeScript pra valer](modulos/05-javascript-typescript.md) | 2 |
+| 6 | [Frontend com React](modulos/06-react.md) | 3, 5 |
+| 7 | [Backend com Node](modulos/07-backend-node.md) | 3, 4, 5 |
+| 8 | [Testes automatizados](modulos/08-testes.md) | 7 |
+| 9 | [Ambiente, Docker e deploy](modulos/09-ambiente-docker-deploy.md) | 0, 4, 7 |
+| 10 | [Aprofundamento](modulos/10-aprofundamento.md) | 9 |
 
-Os módulos 5 a 10 eu vou publicando conforme você for chegando perto deles.
+Os módulos 0 a 9 têm conteúdo fechado. O 10 é diferente de propósito: nele você escolhe a direção e escreve a própria proposta, e a gente decide junto.
+
+Um aviso para quem for ler tudo de uma vez: os módulos do fim vão parecer distantes agora, e tudo bem. O que importa é o módulo em que você está — o mapa completo está aqui só para você saber para onde a coisa vai.
 
 ## A esteira: a gente vai trabalhar como se trabalha
 
