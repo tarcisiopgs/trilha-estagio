@@ -59,15 +59,25 @@ Inclusive é aqui que a esteira sobe um degrau: a partir desse módulo, CI verde
 
 O item 4 é o mais importante do módulo, e eu preciso que você faça exatamente nessa ordem. É a diferença entre "consertei" e "consertei e não volta mais".
 
+## Como entregar
+
+Um Pull Request, com issue aberta antes, revisão cruzada e CI verde.
+
+Aqui o CI deixa de ser enfeite: ele roda os testes a cada PR, e a partir desse módulo eu considero o vermelho um bloqueio, não um aviso.
+
+Cole o link num comentário da tarefa, confira o "passou quando" e mova para **Em revisão**.
+
 ## Passou quando
 
-- [ ] O CI está configurado e roda a cada PR
-- [ ] Existe pelo menos um teste que falhava antes da correção do bug e passou depois, com a sequência documentada
-- [ ] Os testes cobrem caso de borda, e não só o caminho feliz
-- [ ] Nenhum teste depende da ordem de execução — rodando em ordem aleatória, todos passam
-- [ ] Explica a diferença entre unidade e integração usando o próprio código como exemplo
-- [ ] Nenhum teste depende de dado que outro teste deixou no banco
+Todos os itens abaixo são seus para conferir, antes de me chamar:
 
+- [ ] O CI está configurado, roda a cada PR, e está verde
+- [ ] Existe um commit com o teste falhando e o commit seguinte com a correção — o PR aponta os dois hashes, nessa ordem
+- [ ] Rodar a suíte em ordem aleatória passa: o comando e a saída estão colados no PR
+- [ ] Rodar a suíte duas vezes seguidas, sem limpar o banco no meio, passa nas duas
+- [ ] Os testes cobrem caso de borda, e o PR aponta quais casos de borda você escolheu e por quê
+- [ ] Existem testes de integração nas rotas principais, cobrindo caminho feliz e caminho de erro
+- [ ] O PR explica a diferença entre unidade e integração usando **dois testes seus** como exemplo, um de cada tipo
 ## Onde estudar
 
 - [Vitest](https://vitest.dev/guide/) ou [Jest](https://jestjs.io/docs/getting-started) — escolha um. O Vitest é mais simples de configurar em projeto novo

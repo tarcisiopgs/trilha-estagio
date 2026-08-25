@@ -57,15 +57,29 @@ E tem uma parte que, sendo bem honesto, só se aprende fazendo: **Pull Request n
 
 O item 2 não é formalidade, tá? Passar pela experiência de "o meu código voltou com pedido de mudança, e eu mexi sem começar do zero" é o objetivo real desse módulo.
 
+## Como entregar
+
+É nesse módulo que o seu repositório nasce, então a primeira entrega tem um passo a mais:
+
+1. Crie o repositório no GitHub (pode ser privado) e **me adicione como colaborador**
+2. Faça o trabalho do entregável em branches, com Pull Request — nada direto na `main`
+3. Cole o link do repositório e dos PRs num comentário da tarefa do módulo 1
+4. Confira o "passou quando" abaixo, marque os itens e mova a tarefa para **Em revisão**
+
+Do módulo 2 em diante o passo 1 some e o resto continua igual até o fim da trilha.
+
 ## Passou quando
 
-- [ ] A `main` não tem nenhum commit feito direto nela
-- [ ] Nenhum `.env` ou credencial aparece em ponto algum do histórico — a gente confere no histórico, não só no estado atual
-- [ ] Explica, em uma frase cada, o que `add`, `commit` e `push` fazem, e o que acontece se pular um deles
-- [ ] Resolveu um conflito de verdade, sem apagar a pasta e clonar de novo
-- [ ] Abriu, atualizou depois do review e mergeou um PR
-- [ ] O histórico é legível: nada de `ajustes`, `fix`, `wip`, `teste2`
+Todos os itens abaixo são seus para conferir, antes de me chamar:
 
+- [ ] `git log --oneline main` não mostra nenhum commit feito direto na `main` — tudo que está lá chegou por merge de PR
+- [ ] `git log --all --oneline -- '*.env*'` não devolve nada, e o `.gitignore` já cobre `.env` desde o primeiro commit
+- [ ] A descrição de um dos seus PRs explica, em uma frase cada, o que `add`, `commit` e `push` fazem e o que acontece se você pular um deles
+- [ ] Existe um PR com conflito de verdade resolvido, e a descrição conta o que conflitou e como você resolveu
+- [ ] Pelo menos um PR foi aberto, recebeu pedido de mudança, foi atualizado **na mesma branch** e mergeado depois
+- [ ] `git log --oneline` inteiro é legível: nenhuma mensagem é `ajustes`, `fix`, `wip` ou `teste2`
+- [ ] O `README.md` do repositório diz o que é aquele repositório e como ele está organizado
+- [ ] O script e as notas do módulo 0 estão versionados lá dentro
 ## Onde estudar
 
 - [Pro Git](https://git-scm.com/book/pt-br/v2) — capítulos 2 e 3. É gratuito, é oficial e inclusive tem tradução em português

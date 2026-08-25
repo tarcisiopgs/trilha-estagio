@@ -63,16 +63,27 @@ Uma aplicação pequena, mas completa, que consome a API que você usou no módu
 2. **Os três estados tratados de forma visível**: carregando, erro e lista vazia. Eu preciso que dê para forçar cada um deles, e que você mostre isso no PR
 3. **Deploy** na Vercel, Netlify ou parecido, com o link no README
 
+## Como entregar
+
+Um Pull Request, com issue aberta antes e revisão cruzada do outro estagiário.
+
+**A partir desse módulo entra o CI:** configure lint e teste rodando no PR, e o verde passa a ser pré-requisito para eu revisar. Ou seja, PR vermelho eu nem abro — o que também vale no mundo real.
+
+Cole o link do PR e o link da aplicação no ar num comentário da tarefa, confira o "passou quando" e mova para **Em revisão**.
+
 ## Passou quando
 
-- [ ] Os três estados existem e podem ser forçados um a um
-- [ ] Nenhuma `key` é índice de array em lista que muda de ordem ou de tamanho
-- [ ] Explica por que um componente específico re-renderizou
-- [ ] Não existe `useEffect` que poderia ser um cálculo direto
-- [ ] Nenhuma chave de API aparece no bundle do frontend — isso amarra com o módulo 3
-- [ ] A aplicação está no ar e abre pelo link do README
-- [ ] Nenhum estado guarda algo que dava para derivar de outro estado
+Todos os itens abaixo são seus para conferir, antes de me chamar:
 
+- [ ] O CI está verde no PR
+- [ ] Os três estados existem, e o PR mostra como forçar cada um — com print ou com a instrução de como reproduzir
+- [ ] Nenhuma `key` é índice de array em lista que muda de ordem ou de tamanho
+- [ ] O PR explica por que um componente específico re-renderizou, apontando o que mudou
+- [ ] Cada `useEffect` que sobrou está justificado no PR; nenhum deles poderia ser um cálculo direto
+- [ ] Buscar a sua chave de API dentro da pasta de build não encontra nada
+- [ ] A aplicação está no ar e abre pelo link do README
+- [ ] Nenhum estado guarda algo que dava para derivar de outro estado — o PR aponta um caso que você derivou de propósito
+- [ ] A URL reflete onde você está: dá para copiar o link do detalhe, colar em outra aba e cair no mesmo item
 ## Onde estudar
 
 - [react.dev](https://react.dev/learn) — a documentação oficial nova é excelente e tem exercício junto. Comece por *Thinking in React*

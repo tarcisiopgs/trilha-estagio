@@ -62,16 +62,26 @@ Agora você tem uma API (módulo 7), um banco modelado (módulo 4) e o terminal 
 3. **Deploy da aplicação num ambiente real**, com as variáveis de ambiente configuradas fora do código
 4. **README que ensina alguém a rodar em 5 minutos** — e eu preciso que outra pessoa consiga seguir sem te perguntar nada. Esse é o teste de verdade do módulo
 
+## Como entregar
+
+Um Pull Request, com issue aberta antes, revisão cruzada e CI verde.
+
+Esse módulo tem uma entrega que depende de outra pessoa, e de propósito: **o outro estagiário vai clonar o seu projeto e seguir o seu README, sem te perguntar nada**, e comentar no seu PR o que aconteceu. Se ele travar, o README ainda não está pronto — e naturalmente você faz o mesmo pelo dele.
+
+Cole o link do PR e o link da aplicação no ar num comentário da tarefa, confira o "passou quando" e mova para **Em revisão**.
+
 ## Passou quando
 
-- [ ] `docker compose up` sobe o ambiente completo do zero, sem passo manual não documentado
-- [ ] O banco mantém os dados depois de reiniciar o container
-- [ ] Nenhum segredo dentro da imagem nem no repositório
-- [ ] A aplicação está no ar e acessível
-- [ ] Consegue ver o log do que está rodando e explicar por que algo caiu
-- [ ] Outra pessoa roda o projeto seguindo apenas o README
-- [ ] Sabe fazer rollback do deploy e já fez pelo menos uma vez, de propósito
+Todos os itens abaixo são seus para conferir, antes de me chamar:
 
+- [ ] `docker compose down -v` seguido de `docker compose up` sobe o ambiente completo do zero — a saída dos dois comandos está colada no PR
+- [ ] Nenhum passo manual escondido: nada que esteja só na sua cabeça ou só no seu terminal
+- [ ] O banco mantém os dados depois de reiniciar o container, e o PR mostra o antes e o depois
+- [ ] Buscar por segredo dentro da imagem e no repositório não acha nada
+- [ ] A aplicação está no ar e acessível pelo link do README
+- [ ] O PR tem o log de um container que caiu de propósito, com a sua explicação do que a mensagem estava dizendo
+- [ ] O outro estagiário clonou, seguiu só o README e conseguiu rodar — o registro disso é o comentário dele no seu PR
+- [ ] Você fez um rollback do deploy de propósito, pelo menos uma vez, e registrou como fez
 ## Onde estudar
 
 - [Docker — Get Started](https://docs.docker.com/get-started/) — o oficial, e é bom

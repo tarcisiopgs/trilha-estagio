@@ -59,18 +59,30 @@ Um **caderno de bugs**: 5 casos, cada um no seu próprio Pull Request, e cada um
 5. a causa real
 6. a correção
 
-Três desses bugs eu planto num código pequeno que eu te entrego. Os outros dois são bugs que aparecerem naturalmente no seu caminho — e eles vão aparecer.
+Três desses bugs já estão plantados para você em [`exercicios/02-bugs-plantados.js`](../exercicios/02-bugs-plantados.js), aqui mesmo neste repositório — ou seja, você não precisa esperar nada de mim para começar. Os outros dois são bugs que aparecerem naturalmente no seu caminho, e eles vão aparecer.
 
 O item 3 é o coração da entrega. Um caderno em que toda hipótese estava certa de primeira é um caderno mal preenchido: quer dizer que você escreveu depois de já saber a resposta.
 
+## Como entregar
+
+A partir desse módulo entra a issue: **abra uma issue antes de começar cada bug**, dizendo o sintoma, e feche ela pelo PR.
+
+São 5 PRs, um por bug. Cole os links dos 5 num comentário da tarefa, confira o "passou quando" e mova para **Em revisão**.
+
+Os três bugs plantados estão em [`exercicios/02-bugs-plantados.js`](../exercicios/02-bugs-plantados.js), aqui mesmo neste repositório — pode começar por eles sem me esperar. Os outros dois são bugs que apareceram no seu caminho, e eles vão aparecer.
+
 ## Passou quando
 
-- [ ] Rastreia um loop de ~15 linhas no papel e acerta o valor final, sem rodar
-- [ ] Nos 5 relatos, a hipótese vem antes da correção — e em pelo menos um deles a primeira hipótese estava errada, e isso está registrado
-- [ ] Usou breakpoint pelo menos uma vez, não só `console.log`
-- [ ] Pega um erro e aponta a primeira linha do stack trace que é código seu
-- [ ] Em pelo menos 3 dos 5 casos, chegou na causa sem usar IA. Nos outros, o relato registra o que foi perguntado e o que se aprendeu com a resposta
+Todos os itens abaixo são seus para conferir, antes de me chamar:
 
+- [ ] Os 5 relatos estão completos, cada um com sintoma, erro na íntegra, hipótese, teste da hipótese, causa real e correção
+- [ ] **Em cada relato, a hipótese está escrita num commit anterior ao commit da correção** — dá para provar isso pelo histórico, e é isso que separa hipótese de racionalização
+- [ ] Em pelo menos um dos 5, a primeira hipótese estava errada, e isso está registrado em vez de apagado
+- [ ] Os três bugs plantados foram encontrados e corrigidos, e o arquivo roda sem erro no fim
+- [ ] Um dos relatos tem um print de breakpoint parado na linha, com os valores das variáveis visíveis
+- [ ] Um dos relatos aponta, num stack trace colado, qual é a primeira linha que é código seu — e explica por que as de cima não são
+- [ ] Tem um relato com o rastreio de um loop feito na mão: a tabela de variáveis, o valor final que você previu **antes** de rodar, e a saída real
+- [ ] Em pelo menos 3 dos 5 casos você chegou na causa sem IA; nos outros, o relato registra o que foi perguntado e o que você aprendeu com a resposta
 ## Onde estudar
 
 - [Chrome DevTools — depurar JavaScript](https://developer.chrome.com/docs/devtools/javascript) — leia **e** faça o passo a passo junto

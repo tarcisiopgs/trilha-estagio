@@ -2,6 +2,8 @@
 
 **Depende de:** nada. É o começo.
 
+> **Antes de qualquer coisa:** caso você esteja no Windows, instale o WSL primeiro. Está explicado no [README](../README.md#antes-do-módulo-0-a-sua-máquina). Sem isso, metade desse módulo simplesmente não existe na sua máquina.
+
 ## Objetivo
 
 Você ser autossuficiente na sua própria máquina: navegar, criar, mover, inspecionar e entender o que o terminal está reclamando quando alguma coisa não roda.
@@ -36,7 +38,7 @@ Tem um segundo motivo, mais silencioso: quem não enxerga arquivo oculto no term
 - O que é o `PATH` e por que aparece `command not found`
 - `which`: descobrir onde o binário realmente está
 - Exportar variável, listar as que existem, e por que elas somem quando você fecha o terminal
-- O papel do `.zshrc` (ou `.bashrc`)
+- O papel do `.bashrc` (ou `.zshrc`)
 
 **Processos e portas**
 - Descobrir o que está ocupando a porta 3000
@@ -47,24 +49,84 @@ Tem um segundo motivo, mais silencioso: quem não enxerga arquivo oculto no term
 
 ## Entregável
 
-Eu preciso que você escreva um shell script pequeno e que seja de fato útil. Pode escolher uma das duas ideias abaixo, ou me propor a sua:
+São três coisas: um script instalado, um exercício de diagnóstico e o seu arquivo de notas.
 
-- montar a estrutura de pastas do seu estudo, a partir de um diretório base
-- fazer backup de um diretório, colocando a data no nome do arquivo gerado
+### 1. Um comando seu, instalado na sua máquina
 
-O script precisa, obrigatoriamente, exercitar quatro coisas: **caminho**, **variável**, **permissão de execução** e **rodar de verdade** — ou seja, não é pseudocódigo.
+Eu preciso que você escreva um script que faça backup de um diretório, gerando um arquivo com a data no nome — algo como `estudo-2026-08-25.tar.gz`.
 
-Guarde junto um arquivo de notas com o que você foi aprendendo, no formato "comando — o que faz — quando eu usaria". Esse arquivo é seu e não é prova, então escreve com as suas palavras mesmo. Você vai voltar nele.
+A parte que importa não é o backup em si, é **como ele fica instalado**:
 
-> O repositório só nasce no módulo 1, então aqui a entrega é ao vivo, comigo. Depois o script e as notas entram como o primeiro commit do módulo seguinte.
+- o script mora em `~/bin/`
+- ele tem permissão de execução
+- `~/bin` está no seu `PATH`, configurado no `.bashrc` (ou `.zshrc`), e não só exportado na mão
+- você chama ele **pelo nome, de qualquer diretório**, sem `bash` na frente e sem `./`
+- o diretório de origem vem de fora do script: por argumento, ou por uma variável de ambiente com um padrão sensato
+
+Repare que esse desenho exercita as quatro coisas do módulo de um jeito que não dá para escapar: sem `chmod +x` ele não roda, sem `PATH` ele não é encontrado, sem tratar caminho direito ele quebra quando você chama de outra pasta, e sem variável você não consegue mudar a origem sem editar o código.
+
+Uma dica que vale ouro aqui: teste com um diretório que tenha **espaço no nome**. É o erro número um de quem está começando com shell.
+
+### 2. "Esse script não roda, descubra por quê"
+
+O script abaixo tem **três defeitos**. Copie ele para a sua máquina, faça rodar, e registre nas notas qual era cada defeito e como você descobriu:
+
+```bash
+#! /usr/bin/env bash
+DESTINO=$HOME/meus arquivos/saida
+mkdir -p $DESTINO
+cp *.txt $DESTINO
+echo "copiei tudo para $DESTINO"
+```
+
+Não vale só consertar no olho e seguir. O que eu quero ler é o caminho: qual foi a mensagem de erro, o que ela te disse, e o que você fez a partir dela.
+
+### 3. O arquivo de notas
+
+Um arquivo com o que você foi aprendendo, no formato "comando — o que faz — quando eu usaria". Escreve com as suas palavras mesmo, que é para você voltar nele depois.
+
+Além dos comandos, esse arquivo precisa ter, escrito, as respostas para estas quatro perguntas:
+
+1. Por que acontece `command not found`? O que o terminal fez antes de desistir?
+2. Onde está instalado um binário que você usa todo dia (escolha um), como você descobriu, e por que o terminal consegue achar ele
+3. O que estava ocupando a porta 3000 na sua máquina, como você descobriu e como você liberou — **cole a saída dos comandos**
+4. Por que uma variável exportada no terminal some quando você fecha a janela, e o que fazer para ela não sumir
+
+Na pergunta 3, caso não tenha nada ocupando a porta, ocupe você mesmo: sobe qualquer coisa nela, acha o processo, mata. É esse o exercício.
+
+## Como entregar
+
+Esse é o único módulo que não entrega por Pull Request, porque o repositório só nasce no módulo 1.
+
+**Anexe os dois arquivos** — o script e as notas — **num comentário da tarefa do módulo 0, no Todoist.** No corpo do comentário, cole a saída de dois comandos:
+
+```bash
+which backup-estudo
+```
+
+```bash
+cd /tmp && backup-estudo ~/algum-diretorio; echo "saiu com: $?"
+```
+
+(troque `backup-estudo` pelo nome que você deu ao seu script)
+
+Feito isso, você mesmo confere o "passou quando" abaixo, marca os itens no Todoist e move a tarefa para **Em revisão**. Aí é comigo.
+
+Caso você já tenha criado um repositório antes da hora, pode entregar por lá e só comentar o link na tarefa.
 
 ## Passou quando
 
-- [ ] Resolve uma lista de 10 tarefas no terminal, sem consultar, numa sessão de ~20 minutos comigo. Um dos itens será "esse script não roda, descubra por quê"
-- [ ] Explica, com as suas palavras, por que acontece `command not found`
-- [ ] Consegue dizer onde um binário está instalado e como o terminal o encontra
-- [ ] O script roda na máquina de outra pessoa, não só na sua
-- [ ] Descobre sozinho o que está ocupando uma porta e libera
+Todos os itens abaixo são seus para conferir, antes de me chamar:
+
+- [ ] `which <nome-do-seu-script>` devolve um caminho dentro de `~/bin`
+- [ ] O script roda pelo nome, a partir de um diretório qualquer (teste a partir de `/tmp`), e `echo $?` devolve `0` logo depois
+- [ ] `ls -l ~/bin/<nome-do-seu-script>` mostra o `x` nas permissões
+- [ ] Funciona também num terminal **novo**, aberto do zero — ou seja, o `PATH` está no arquivo de perfil e não só na sessão atual
+- [ ] O script funciona com um diretório que tem espaço no nome
+- [ ] O arquivo gerado tem a data no nome e existe de verdade no disco depois de rodar
+- [ ] O script quebrado do item 2 foi corrigido, roda, e as notas dizem quais eram os três defeitos e como você chegou em cada um
+- [ ] As notas respondem, por escrito, às quatro perguntas do item 3 — e a pergunta da porta tem a saída dos comandos colada
+- [ ] Os dois arquivos estão anexados no comentário da tarefa, com a saída dos dois comandos colada junto
 
 ## Onde estudar
 
@@ -77,3 +139,4 @@ Guarde junto um arquivo de notas com o que você foi aprendendo, no formato "com
 - Copiar comando da internet e rodar sem ler. Caso você não saiba o que ele faz, não roda — principalmente com `sudo` ou `rm`
 - Achar que decorar comando é o objetivo. O objetivo é entender o modelo: arquivos, caminhos, permissões, processos. Comando a gente consulta
 - Fugir para a interface gráfica quando aperta. É justamente aí que se aprende
+- Escrever o script, achar que está pronto e não rodar até o fim. Rodar é parte de escrever, e não a etapa seguinte
