@@ -53,9 +53,9 @@ São três coisas: um script instalado, um exercício de diagnóstico e o seu ar
 
 ### 1. Um comando seu, instalado na sua máquina
 
-Eu preciso que você escreva um script que faça backup de um diretório, gerando um arquivo com a data no nome — algo como `estudo-2026-08-25.tar.gz`.
+Eu preciso que você escreva um script pequeno e que seja de fato útil para você. Algumas ideias: um backup de diretório com a data no nome, algo como `estudo-2026-08-25.tar.gz`; ou um script que monta a estrutura de pastas do seu estudo. Pode propor a sua também — e **caso você já tenha escrito algum, aproveita ele** em vez de começar do zero.
 
-A parte que importa não é o backup em si, é **como ele fica instalado**:
+A parte que importa aqui não é o que o script faz, é **como ele fica instalado**:
 
 - o script mora em `~/bin/`
 - ele tem permissão de execução
@@ -123,7 +123,7 @@ Todos os itens abaixo são seus para conferir, antes de me chamar:
 - [ ] `ls -l ~/bin/<nome-do-seu-script>` mostra o `x` nas permissões
 - [ ] Funciona também num terminal **novo**, aberto do zero — ou seja, o `PATH` está no arquivo de perfil e não só na sessão atual
 - [ ] O script funciona com um diretório que tem espaço no nome
-- [ ] O arquivo gerado tem a data no nome e existe de verdade no disco depois de rodar
+- [ ] O script faz o que promete: depois de rodar, dá para ver o efeito dele no disco
 - [ ] O script quebrado do item 2 foi corrigido, roda, e as notas dizem quais eram os três defeitos e como você chegou em cada um
 - [ ] As notas respondem, por escrito, às quatro perguntas do item 3 — e a pergunta da porta tem a saída dos comandos colada
 - [ ] Os dois arquivos estão anexados no comentário da tarefa, com a saída dos dois comandos colada junto
