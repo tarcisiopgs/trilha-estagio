@@ -61,15 +61,22 @@ Um PR com três partes:
 2. **Transformação de dados:** a partir de um JSON grande de verdade (pode ser o retorno da API que você usou no módulo 3), responda 5 perguntas usando `map`, `filter` e `reduce`, tudo tipado
 3. **Um caso assíncrono:** busque três coisas em paralelo com `Promise.all`, trate o erro de uma delas sem derrubar as outras, e explique na descrição do PR por que paralelo foi melhor que sequência ali
 
+## Como entregar
+
+Um Pull Request, com issue aberta antes e revisão cruzada do outro estagiário. Cole o link num comentário da tarefa, confira o "passou quando" e mova para **Em revisão**.
+
 ## Passou quando
 
-- [ ] Explica por que `const` não impede a mudança do conteúdo de um objeto
-- [ ] Nenhum `any` no código entregue; onde o tipo era desconhecido, usou `unknown` com narrowing
-- [ ] Explica a diferença entre rodar duas requisições em sequência e com `Promise.all`, e indica qual usar num caso dado
-- [ ] Identifica um bug causado por `await` esquecido, olhando o sintoma
-- [ ] Usa `reduce` onde ele cabe, e sabe dizer quando ele não cabe
-- [ ] O `strict` está ligado e o projeto compila sem erro
+Todos os itens abaixo são seus para conferir, antes de me chamar:
 
+- [ ] `npx tsc --noEmit` passa sem nenhum erro, e o `strict` está ligado no `tsconfig.json`
+- [ ] Uma busca por `any` no código entregue não devolve nada
+- [ ] Onde o tipo era desconhecido você usou `unknown` com narrowing — aponte no PR pelo menos um caso e explique o que o narrowing garantiu ali
+- [ ] O PR explica, com um exemplo do seu próprio código, por que `const` não impede a mudança do conteúdo de um objeto
+- [ ] As 5 perguntas de transformação estão respondidas, todas tipadas, usando `map`, `filter` e `reduce`
+- [ ] O PR aponta um caso em que `reduce` **não** caberia, e diz o que você usaria no lugar
+- [ ] O caso assíncrono busca três coisas com `Promise.all`, o erro de uma delas é tratado sem derrubar as outras, e o PR explica por que paralelo ganhou de sequência ali
+- [ ] O PR mostra um bug de `await` esquecido: o código, o sintoma que ele produz e por que o sintoma é exatamente esse
 ## Onde estudar
 
 - [javascript.info](https://javascript.info/) — é o melhor material de JavaScript que existe de graça. Para esse módulo: as partes de objetos, referências e Promises

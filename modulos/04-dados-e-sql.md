@@ -66,16 +66,25 @@ Um sinal clássico de que a base está faltando é resolver no código o que o b
 
 Pergunta de negócio é do tipo "quais clientes nunca fizeram pedido?", "qual o total por categoria no último mês?", "quem tem mais de três itens?". As perguntas você escreve junto — formular a pergunta certa é metade do exercício.
 
+## Como entregar
+
+Um Pull Request, com issue aberta antes. Cole o link num comentário da tarefa, confira o "passou quando" e mova para **Em revisão**.
+
+**A partir desse módulo entra a revisão cruzada:** antes de me chamar, peça uma revisão para o outro estagiário e responda o que ele levantar. Não é para ele aprovar no seu lugar — é para você passar pela experiência de ler o código de outra pessoa e de ter o seu lido. Eu reviso depois dele.
+
 ## Passou quando
 
-- [ ] O modelo tem chave estrangeira de verdade e a tabela de junção no lugar certo
-- [ ] Escreve um `JOIN` sem consultar exemplo
-- [ ] Explica quando o `LEFT JOIN` muda o resultado em relação ao `INNER JOIN`, com um caso concreto do próprio banco
-- [ ] Diz, **antes de rodar**, quantas linhas a query deve trazer — e acerta pelo menos a ordem de grandeza
-- [ ] Conta linhas de uma tabela e explica por que a agregação é feita no banco e não no código
-- [ ] Não rodou nenhum `UPDATE` ou `DELETE` sem antes rodar o `SELECT` equivalente
-- [ ] Explica o que um índice resolve e o que ele custa
+Todos os itens abaixo são seus para conferir, antes de me chamar:
 
+- [ ] O diagrama está no PR e tem pelo menos uma relação N-para-N, com a tabela de junção no lugar certo
+- [ ] O script de criação roda do zero num banco vazio, sem erro, e as tabelas têm `FOREIGN KEY` declarada de verdade
+- [ ] As 10 perguntas estão no PR, cada uma com a pergunta em português, a query e o resultado colado
+- [ ] No mínimo 3 usam `JOIN` e 2 usam `GROUP BY`
+- [ ] Para cada query, o PR diz **quantas linhas você esperava antes de rodar** e quantas vieram
+- [ ] Tem uma pergunta que só o `LEFT JOIN` responde, com a mesma query em `INNER JOIN` do lado e a diferença de resultado visível
+- [ ] Os dados populados incluem os casos tortos: pelo menos um registro sem par e um campo nulo
+- [ ] Todo `UPDATE` ou `DELETE` que aparece no PR vem acompanhado do `SELECT` equivalente, rodado antes
+- [ ] O PR tem uma seção escrita sobre índice: o que ele resolve, o que ele custa, e em qual coluna do seu banco você criaria um
 ## Onde estudar
 
 - [PostgreSQL — tutorial oficial](https://www.postgresql.org/docs/current/tutorial.html), capítulos 1 a 3

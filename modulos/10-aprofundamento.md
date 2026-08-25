@@ -45,15 +45,24 @@ O item 1 é onde está o aprendizado escondido. Definir o próprio critério de 
 
 O item 3 também não é enfeite: explicar para outra pessoa é o teste mais honesto de entendimento que existe. Você vai descobrir na hora de montar a apresentação o que achava que sabia.
 
+## Como entregar
+
+Esse módulo entrega em dois momentos, e a ordem importa:
+
+1. **A proposta primeiro.** Escreva ela num PR só dela, mova a tarefa para **Em revisão** e espere o meu aval. Aqui é o único ponto da trilha em que você espera por mim de propósito — porque não faz sentido você executar duas semanas em cima de um critério de sucesso que a gente ainda não combinou
+2. **A execução depois**, em PRs normais, com os critérios que a própria proposta definiu
+
+A apresentação a gente marca junto, e ela é a única coisa da trilha inteira que acontece ao vivo — pelo motivo óbvio de que é uma apresentação.
+
 ## Passou quando
 
-Os critérios saem da sua própria proposta, aprovados por mim antes de você começar. Eles precisam ser objetivos, do mesmo jeito que foram nos módulos anteriores — "melhorei a performance" não serve; "reduzi o tempo de resposta da listagem de 800ms para menos de 200ms com 100 mil registros" serve.
+Os critérios saem da sua própria proposta, e eu preciso que eles sejam objetivos do mesmo jeito que foram nos módulos anteriores. "Melhorei a performance" não serve; "reduzi o tempo de resposta da listagem de 800ms para menos de 200ms com 100 mil registros" serve — repare que o segundo é conferível por qualquer pessoa, inclusive por você.
 
-Além dos seus critérios, dois valem sempre:
+Além dos seus critérios, estes três valem sempre:
 
-- [ ] A proposta foi escrita e aprovada **antes** da execução começar
+- [ ] A proposta foi escrita e aprovada **antes** de a execução começar
+- [ ] Cada critério da sua proposta tem, no PR, a evidência que prova que ele foi cumprido
 - [ ] A apresentação aconteceu, e você respondeu às perguntas do time
-
 ## Onde estudar
 
 Depende inteiramente do caminho que você escolher — e achar o material bom já faz parte do módulo. Uma dica que vale para qualquer direção: procure a documentação oficial primeiro, depois um livro de referência da área, e só então conteúdo avulso. Nessa altura você já tem repertório para julgar se uma fonte é boa, e essa é uma habilidade que a trilha inteira vinha treinando em silêncio.

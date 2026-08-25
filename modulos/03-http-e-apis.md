@@ -64,15 +64,24 @@ Eu preciso que você escolha uma API pública **que exija chave de acesso** — 
 
 O item 2 é o coração do módulo. Provocar o erro ensina muito mais do que ler sobre ele, e além disso te dá repertório para reconhecer o mesmo padrão quando ele aparecer sem você ter pedido.
 
+## Como entregar
+
+Um Pull Request, com issue aberta antes. Cole o link num comentário da tarefa, confira o "passou quando" e mova para **Em revisão**.
+
+Uma coisa que eu preciso que você cuide desde já: **a chave da API não entra no PR em lugar nenhum**. Ela mora numa variável de ambiente, e os comandos que você colar mostram `$MINHA_CHAVE`, e não o valor. Isso vira reflexo aqui e te salva no módulo 7.
+
 ## Passou quando
 
-- [ ] Diante de um status qualquer, diz o que provavelmente aconteceu e qual o próximo passo da investigação, sem consultar tabela
-- [ ] Explica a diferença entre `401` e `403`, e entre `404` e `204`
-- [ ] Monta uma chamada autenticada com `curl`, do zero, sem partir de um exemplo pronto
-- [ ] Explica o que é CORS e por que não se resolve no frontend
-- [ ] Escolhe o método correto para uma operação e justifica a escolha
-- [ ] Abre a aba Network, acha uma requisição específica e lê o que ela mandou e o que recebeu
+Todos os itens abaixo são seus para conferir, antes de me chamar:
 
+- [ ] Os quatro erros provocados estão no PR — `401`, `404`, `400` e `422` — cada um com o comando que causou e o corpo da resposta colado
+- [ ] Tem uma chamada autenticada com `curl` no PR, com o header de autenticação, e a explicação do que cada pedaço do comando faz
+- [ ] O PR tem uma seção escrita explicando a diferença entre `401` e `403`, e entre `404` e `204`, usando a API que você escolheu como exemplo
+- [ ] O PR tem uma seção escrita sobre CORS: o que é, e por que não se resolve no frontend
+- [ ] Para cada endpoint que você usou, o PR diz qual método é e por que ele é o correto para aquela operação
+- [ ] Tem um print da aba Network mostrando uma requisição sua, com o que foi mandado e o que voltou
+- [ ] Nenhuma chave de API aparece no PR nem no histórico — só `$MINHA_CHAVE` ou equivalente
+- [ ] Para dois status diferentes que você recebeu, o PR diz qual seria o próximo passo da investigação em cada caso
 ## Onde estudar
 
 - [MDN — HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP) — é a referência. Comece por *Overview*, *Methods* e *Status*

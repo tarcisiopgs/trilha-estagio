@@ -70,16 +70,26 @@ A API do domínio que você modelou no módulo 4:
 
 O item 5 é o que fecha o ciclo. É quando você percebe que decisão tomada no backend aparece na tela — e vice-versa.
 
+## Como entregar
+
+Um Pull Request, com issue aberta antes, revisão cruzada e CI verde.
+
+Como aqui o frontend do módulo 6 passa a consumir a sua API, eu preciso de dois links no comentário da tarefa: o do PR do backend e o do PR do frontend que fez a troca.
+
+Confira o "passou quando" e mova para **Em revisão**.
+
 ## Passou quando
 
-- [ ] Os status estão corretos: `201` ao criar, `204` ao apagar, `404` no inexistente, `422` na validação
-- [ ] Entrada inválida não chega ao banco em nenhum caminho
-- [ ] Nenhum segredo no código ou no repositório; tudo em variável de ambiente
-- [ ] Explica o caminho completo de uma requisição, camada por camada
-- [ ] Erro interno não devolve stack trace ao cliente
-- [ ] Existe migration versionada; nenhuma alteração de estrutura foi feita na mão
-- [ ] O frontend do módulo 6 funciona inteiro contra essa API
+Todos os itens abaixo são seus para conferir, antes de me chamar:
 
+- [ ] O PR tem as chamadas `curl` coladas provando cada status: `201` ao criar, `204` ao apagar, `404` no inexistente, `422` na validação
+- [ ] Tem uma chamada com corpo inválido colada no PR, mostrando que ela foi barrada antes de chegar no banco
+- [ ] Buscar por segredo no repositório e no histórico não acha nada; existe um `.env.example` com as chaves vazias
+- [ ] Tem uma chamada que provoca erro interno colada no PR, e a resposta não traz stack trace nenhum
+- [ ] O README explica o caminho completo de uma requisição, camada por camada, do recebimento até a resposta
+- [ ] O banco sobe do zero rodando só as migrations — nenhuma alteração de estrutura foi feita na mão
+- [ ] A listagem tem filtro e paginação, com exemplo de chamada no PR
+- [ ] O frontend do módulo 6 funciona inteiro contra essa API, e o PR dele está linkado
 ## Onde estudar
 
 - [Node.js — documentação oficial](https://nodejs.org/docs/latest/api/) para consulta, e o guia *Getting Started* para começar
