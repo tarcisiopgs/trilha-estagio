@@ -65,11 +65,14 @@ Na prática o fluxo é esse, no quadro do Todoist:
 | Coluna | O que significa | Quem move |
 |---|---|---|
 | **A fazer** | próximo da fila | você |
+| **Recusadas** | eu revisei e devolvi; o comentário na tarefa diz o que faltou | eu |
 | **Em progresso** | você começou | você |
 | **Em revisão** | acabou, conferiu o "passou quando" inteiro e está me pedindo validação | você |
 | **Feito** | eu revisei e aprovei | eu |
 
-Ou seja: **"Em revisão" é o seu jeito de me chamar.** Não precisa mandar mensagem, não precisa esperar sábado, e não precisa pedir licença para mover — moveu, eu recebo. Enquanto eu não passar para "Feito", esse módulo ainda está aberto, e eu posso te devolver com pedido de mudança, que é exatamente o que acontece num time de verdade.
+Ou seja: **"Em revisão" é o seu jeito de me chamar.** Não precisa mandar mensagem, não precisa esperar sábado, e não precisa pedir licença para mover — moveu, eu recebo. Enquanto eu não passar para "Feito", esse módulo ainda está aberto.
+
+E ele pode voltar. Caso falte alguma coisa, eu movo para **Recusadas** e escrevo na tarefa exatamente o que faltou — nunca um "não passou" seco. Naturalmente isso não é castigo nem nota baixa: é o mesmo que acontece quando um PR volta com pedido de mudança, que é o dia a dia de qualquer time. Você corrige, marca os itens que ficaram abertos e move de volta para "Em revisão".
 
 **Onde a entrega fica, por módulo:**
 
