@@ -85,20 +85,28 @@ Não vale só consertar no olho e seguir. O que eu quero ler é o caminho: qual 
 
 Um arquivo com o que você foi aprendendo, no formato "comando — o que faz — quando eu usaria". Escreve com as suas palavras mesmo, que é para você voltar nele depois.
 
-Além dos comandos, esse arquivo precisa ter, escrito, as respostas para estas quatro perguntas:
+**Esse arquivo é seu.** Ele não vai para o repositório e você não precisa me mandar — é um diário, um exercício mental. O que eu preciso é só de um comentário curto na tarefa dizendo o que você registrou nele.
+
+Além dos comandos, é para esse arquivo ter, escrito, as respostas para estas quatro perguntas:
 
 1. Por que acontece `command not found`? O que o terminal fez antes de desistir?
 2. Onde está instalado um binário que você usa todo dia (escolha um), como você descobriu, e por que o terminal consegue achar ele
-3. O que estava ocupando a porta 3000 na sua máquina, como você descobriu e como você liberou — **cole a saída dos comandos**
+3. O que estava ocupando a porta 3000 na sua máquina, como você descobriu e como você liberou
 4. Por que uma variável exportada no terminal some quando você fecha a janela, e o que fazer para ela não sumir
 
 Na pergunta 3, caso não tenha nada ocupando a porta, ocupe você mesmo: sobe qualquer coisa nela, acha o processo, mata. É esse o exercício.
+
+**A pergunta 3 é a única que eu quero ver colada na tarefa**, com a saída dos comandos junto. As outras três ficam com você: elas se respondem lendo, e essa só se responde operando.
 
 ## Como entregar
 
 Esse é o único módulo que não entrega por Pull Request, porque o repositório só nasce no módulo 1.
 
-**Anexe os dois arquivos** — o script e as notas — **num comentário da tarefa do módulo 0, no Todoist.** No corpo do comentário, cole a saída de dois comandos:
+A entrega é **um comentário na tarefa do módulo 0, no Todoist**. Não precisa anexar arquivo nenhum: o script fica instalado na sua máquina e as notas são suas. O comentário precisa ter três coisas.
+
+**Primeira:** a sua resposta da pergunta 3 acima — o que estava ocupando a porta 3000, como você descobriu e como você liberou — com a saída dos comandos colada.
+
+**Segunda:** a saída destes dois comandos:
 
 ```bash
 which backup-estudo
@@ -110,9 +118,11 @@ cd /tmp && backup-estudo ~/algum-diretorio; echo "saiu com: $?"
 
 (troque `backup-estudo` pelo nome que você deu ao seu script)
 
+**Terceira:** poucas linhas dizendo o que você registrou no seu arquivo de notas. Não precisa listar comando por comando.
+
 Feito isso, você mesmo confere o "passou quando" abaixo, marca os itens no Todoist e move a tarefa para **Em revisão**. Aí é comigo.
 
-Caso você já tenha criado um repositório antes da hora, pode entregar por lá e só comentar o link na tarefa.
+Caso você já tenha criado um repositório antes da hora, pode versionar o script por lá e só comentar o link na tarefa.
 
 ## Passou quando
 
@@ -125,8 +135,8 @@ Todos os itens abaixo são seus para conferir, antes de me chamar:
 - [ ] O script funciona com um diretório que tem espaço no nome
 - [ ] O script faz o que promete: depois de rodar, dá para ver o efeito dele no disco
 - [ ] O script quebrado do item 2 foi corrigido, roda, e as notas dizem quais eram os três defeitos e como você chegou em cada um
-- [ ] As notas respondem, por escrito, às quatro perguntas do item 3 — e a pergunta da porta tem a saída dos comandos colada
-- [ ] Os dois arquivos estão anexados no comentário da tarefa, com a saída dos dois comandos colada junto
+- [ ] As notas existem na sua máquina, no formato "comando — o que faz — quando eu usaria", e o comentário na tarefa diz, em poucas linhas, o que você registrou nelas
+- [ ] O comentário na tarefa responde a pergunta 3 — o que estava ocupando a porta 3000, como você descobriu e como liberou — com a saída dos comandos colada, mais a saída dos dois comandos de instalação
 
 ## Onde estudar
 
