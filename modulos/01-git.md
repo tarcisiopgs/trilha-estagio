@@ -51,7 +51,7 @@ E tem uma parte que, sendo bem honesto, só se aprende fazendo: **Pull Request n
 
 ## Entregável
 
-1. **O seu repositório de estudo criado**, com `README.md`, `.gitignore` e as notas e o script do módulo 0
+1. **O seu repositório de estudo criado**, com `README.md`, `.gitignore` e o script do módulo 0
 2. **Pelo menos um Pull Request completo**: aberto por você, revisado por mim, com **uma rodada de mudança pedida e atendida**, e mergeado no fim
 3. **Um conflito provocado e resolvido**, com o que aconteceu documentado na descrição do PR
 
@@ -68,6 +68,34 @@ O item 2 não é formalidade, tá? Passar pela experiência de "o meu código vo
 
 Do módulo 2 em diante o passo 1 some e o resto continua igual até o fim da trilha.
 
+**A partir daqui vale a divisão que a gente segue até o módulo 10:** o Pull Request é a entrega e o Todoist é a conversa. A prova de que a coisa funciona vai colada no corpo do PR; no comentário da tarefa vão o link e o que você quiser me explicar ou perguntar.
+
+**Como organizar o repositório.** Uma pasta por módulo, com o número na frente para elas ficarem em ordem:
+
+```
+seu-repo/
+├── README.md
+├── .gitignore
+├── 00-terminal/        ← o script do módulo 0 mora aqui
+├── 01-git/
+├── 02-depuracao/
+└── ...
+```
+
+Não precisa criar as dez de uma vez — cada uma nasce no módulo dela. O que eu quero evitar é o repositório virar uma pilha de arquivos soltos na raiz, porque em três meses nem você vai achar as coisas.
+
+**Um detalhe do script do módulo 0:** sobe ele com `git add` e `git push`, e não pela interface web do GitHub. A web não carrega a permissão de execução, e o arquivo chega lá sem o `x`. Quem clonar o seu repositório depois — eu, por exemplo — vai receber um script que não roda.
+
+**A prova deste módulo.** Cole no corpo do PR a saída destes três comandos:
+
+```bash
+git log --oneline main
+git log --all --oneline -- '*.env*'
+git ls-files -s 00-terminal/
+```
+
+O primeiro mostra que nada foi direto na `main`, o segundo que nenhum `.env` passou pelo histórico, e o terceiro mostra o modo do arquivo: `100755` é o script com permissão de execução, `100644` é sem.
+
 ## Passou quando
 
 Todos os itens abaixo são seus para conferir, antes de me chamar:
@@ -79,7 +107,7 @@ Todos os itens abaixo são seus para conferir, antes de me chamar:
 - [ ] Pelo menos um PR foi aberto, recebeu pedido de mudança, foi atualizado **na mesma branch** e mergeado depois
 - [ ] `git log --oneline` inteiro é legível: nenhuma mensagem é `ajustes`, `fix`, `wip` ou `teste2`
 - [ ] O `README.md` do repositório diz o que é aquele repositório e como ele está organizado
-- [ ] O script e as notas do módulo 0 estão versionados lá dentro
+- [ ] O script do módulo 0 está versionado lá dentro, e `git ls-files -s` mostra ele como `100755` — ou seja, a permissão de execução sobreviveu ao commit
 ## Onde estudar
 
 - [Pro Git](https://git-scm.com/book/pt-br/v2) — capítulos 2 e 3. É gratuito, é oficial e inclusive tem tradução em português

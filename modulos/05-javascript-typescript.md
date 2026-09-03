@@ -65,6 +65,15 @@ Um PR com três partes:
 
 Um Pull Request, com issue aberta antes e revisão cruzada do outro estagiário. Cole o link num comentário da tarefa, confira o "passou quando" e mova para **Em revisão**.
 
+**A prova deste módulo.** Cole no corpo do PR a saída de:
+
+```bash
+npx tsc --noEmit; echo "saiu com: $?"
+grep -rn ": any\|as any\|<any>" src/; echo "encontrou: $?"
+```
+
+O primeiro precisa terminar em `saiu com: 0` sem nenhuma linha antes dele. O segundo precisa terminar em `encontrou: 1` — o `grep` sai com `1` quando não encontra nada, e é esse `1` que você quer ver aqui.
+
 ## Passou quando
 
 Todos os itens abaixo são seus para conferir, antes de me chamar:
