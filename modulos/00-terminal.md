@@ -69,7 +69,7 @@ Uma dica que vale ouro aqui: teste com um diretório que tenha **espaço no nome
 
 ### 2. "Esse script não roda, descubra por quê"
 
-O script abaixo tem **três defeitos**. Copie ele para a sua máquina, faça rodar, e registre nas notas qual era cada defeito e como você descobriu:
+O script abaixo deveria copiar os `.txt` do diretório atual para uma pasta de saída. Ele não copia — e o pior é que ele termina anunciando que copiou, com código de saída `0`:
 
 ```bash
 #! /usr/bin/env bash
@@ -79,7 +79,13 @@ cp *.txt $DESTINO
 echo "copiei tudo para $DESTINO"
 ```
 
-Não vale só consertar no olho e seguir. O que eu quero ler é o caminho: qual foi a mensagem de erro, o que ela te disse, e o que você fez a partir dela.
+Copie ele para a sua máquina e faça funcionar. **Ele quebra em três pontos, um em cada uma das três linhas do meio — e os três têm a mesma raiz.** Uma das três quebras não imprime erro nenhum, e essa é a que mais importa entender: ela mexe num arquivo seu.
+
+Antes de testar, crie dois ou três `.txt` descartáveis no diretório onde você vai rodar — descartáveis mesmo, porque um deles pode não sobreviver. E rode numa pasta de teste, nunca direto no seu `~`.
+
+Você terminou quando o script cria `~/meus arquivos/saida` — um diretório só, com o espaço no nome —, os `.txt` chegam lá dentro e a mensagem do fim mostra o caminho completo em vez de terminar vazia.
+
+Não vale só consertar no olho e seguir. O que eu quero ler é o caminho: qual foi a mensagem de erro em cada ponto (ou a ausência dela), o que ela te disse, e o que você fez a partir dali.
 
 ### 3. O arquivo de notas
 
@@ -120,7 +126,7 @@ cd /tmp && backup-estudo ~/algum-diretorio; echo "saiu com: $?"
 
 **Terceira:** poucas linhas dizendo o que você registrou no seu arquivo de notas. Não precisa listar comando por comando.
 
-Feito isso, você mesmo confere o "passou quando" abaixo, marca os itens no Todoist e move a tarefa para **Em revisão**. Aí é comigo.
+Feito isso, você mesmo confere o "passou quando" abaixo, item por item, e move a tarefa para **Em revisão**. Aí é comigo.
 
 Caso você já tenha criado um repositório antes da hora, pode versionar o script por lá e só comentar o link na tarefa.
 
@@ -134,7 +140,7 @@ Todos os itens abaixo são seus para conferir, antes de me chamar:
 - [ ] Funciona também num terminal **novo**, aberto do zero — ou seja, o `PATH` está no arquivo de perfil e não só na sessão atual
 - [ ] O script funciona com um diretório que tem espaço no nome
 - [ ] O script faz o que promete: depois de rodar, dá para ver o efeito dele no disco
-- [ ] O script quebrado do item 2 foi corrigido, roda, e as notas dizem quais eram os três defeitos e como você chegou em cada um
+- [ ] O script do item 2 roda: cria `~/meus arquivos/saida`, os `.txt` chegam lá dentro e a mensagem do fim mostra o caminho completo — e as notas dizem quais eram os três pontos que quebravam, qual era a raiz comum e como você chegou nela
 - [ ] As notas existem na sua máquina, no formato "comando — o que faz — quando eu usaria", e o comentário na tarefa diz, em poucas linhas, o que você registrou nelas
 - [ ] O comentário na tarefa responde a pergunta 3 — o que estava ocupando a porta 3000, como você descobriu e como liberou — com a saída dos comandos colada, mais a saída dos dois comandos de instalação
 
