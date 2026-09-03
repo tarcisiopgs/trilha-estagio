@@ -67,6 +67,19 @@ Aqui o CI deixa de ser enfeite: ele roda os testes a cada PR, e a partir desse m
 
 Cole o link num comentário da tarefa, confira o "passou quando" e mova para **Em revisão**.
 
+**A prova deste módulo.** Cole no corpo do PR a saída de:
+
+```bash
+npm test -- <a flag de ordem aleatória da sua ferramenta>; echo "saiu com: $?"
+npm test && npm test
+```
+
+A flag muda conforme o que você escolheu: é `--randomize` no Jest, `--sequence.shuffle` no Vitest, `--test-shuffle` no runner do próprio Node. Procure a sua na documentação — achar isso faz parte.
+
+O primeiro prova que a suíte não depende da ordem; o segundo, que ela não depende de banco limpo. Os dois são o que separa teste de armadilha para o próximo que mexer no código.
+
+E aponte no texto os dois hashes do item 4: o commit em que o teste falha e o commit seguinte, em que ele passa. Nessa ordem, que é o ponto inteiro do exercício.
+
 ## Passou quando
 
 Todos os itens abaixo são seus para conferir, antes de me chamar:

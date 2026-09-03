@@ -72,6 +72,15 @@ Um Pull Request, com issue aberta antes. Cole o link num comentário da tarefa, 
 
 **A partir desse módulo entra a revisão cruzada:** antes de me chamar, peça uma revisão para o outro estagiário e responda o que ele levantar. Não é para ele aprovar no seu lugar — é para você passar pela experiência de ler o código de outra pessoa e de ter o seu lido. Eu reviso depois dele.
 
+**A prova deste módulo.** Cole no corpo do PR a saída de criar o banco **do zero, num banco vazio**, e populá-lo — no cliente que você estiver usando:
+
+```bash
+psql -d estudo -f 04-dados-e-sql/criar.sql
+psql -d estudo -f 04-dados-e-sql/popular.sql
+```
+
+Isso é o que separa "funciona aqui" de "funciona". Depois, para cada uma das 10 perguntas, cole a query e o resultado como ele saiu do terminal — inclusive quando vierem zero linhas, que às vezes é justamente a resposta certa.
+
 ## Passou quando
 
 Todos os itens abaixo são seus para conferir, antes de me chamar:

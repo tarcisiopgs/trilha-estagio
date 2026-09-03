@@ -78,6 +78,17 @@ Como aqui o frontend do módulo 6 passa a consumir a sua API, eu preciso de dois
 
 Confira o "passou quando" e mova para **Em revisão**.
 
+**A prova deste módulo.** Cole no corpo do PR as quatro chamadas com a resposta inteira, `-i` incluído:
+
+```bash
+curl -i -X POST http://localhost:3000/recurso -H 'Content-Type: application/json' -d '{"campo":"valor"}'
+curl -i -X DELETE http://localhost:3000/recurso/1
+curl -i http://localhost:3000/recurso/999
+curl -i -X POST http://localhost:3000/recurso -H 'Content-Type: application/json' -d '{}'
+```
+
+Nessa ordem, elas provam o `201`, o `204`, o `404` e o `422`. A última é a mais importante das quatro: o corpo da resposta precisa dizer a quem chamou **o que** faltou, e não só que deu errado.
+
 ## Passou quando
 
 Todos os itens abaixo são seus para conferir, antes de me chamar:

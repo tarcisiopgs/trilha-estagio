@@ -54,6 +54,8 @@ Esse módulo entrega em dois momentos, e a ordem importa:
 
 A apresentação a gente marca junto, e ela é a única coisa da trilha inteira que acontece ao vivo — pelo motivo óbvio de que é uma apresentação.
 
+**A prova deste módulo é a que você mesmo definiu.** Nos outros nove eu escrevi o bloco de comandos que você cola no PR; aqui isso faz parte da proposta. Para cada critério de sucesso que você escrever, diga junto **como a gente vai olhar para ele** — o comando, o print, a medição, o link. Critério sem prova é intenção, e intenção não fecha módulo.
+
 ## Passou quando
 
 Os critérios saem da sua própria proposta, e eu preciso que eles sejam objetivos do mesmo jeito que foram nos módulos anteriores. "Melhorei a performance" não serve; "reduzi o tempo de resposta da listagem de 800ms para menos de 200ms com 100 mil registros" serve — repare que o segundo é conferível por qualquer pessoa, inclusive por você.

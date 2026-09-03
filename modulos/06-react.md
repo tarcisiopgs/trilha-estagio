@@ -71,6 +71,19 @@ Um Pull Request, com issue aberta antes e revisão cruzada do outro estagiário.
 
 Cole o link do PR e o link da aplicação no ar num comentário da tarefa, confira o "passou quando" e mova para **Em revisão**.
 
+**A prova deste módulo.** Cole no corpo do PR o link da aplicação no ar, o print do CI verde e a saída de:
+
+```bash
+npm run build
+grep -r "$MINHA_CHAVE" dist/; echo "encontrou: $?"
+```
+
+`encontrou: 1` é o resultado certo: quer dizer que a sua chave não foi parar no pacote que vai para o navegador. E repare que o comando usa a variável, então o valor da chave não vai colado no PR junto.
+
+Um cuidado, que aliás é um ótimo exemplo do módulo 0: rode isso na mesma sessão em que a variável está exportada. Caso `$MINHA_CHAVE` esteja vazia, o `grep` passa a procurar por nada, casa com todas as linhas e te dá um `encontrou: 0` que parece um desastre e não é. Confira com `[ -n "$MINHA_CHAVE" ] && echo ok` antes.
+
+Para os três estados, o print de cada um — carregando, erro e vazio — mais a instrução de como forçar cada um. "Dá para forçar" é diferente de "existe no código".
+
 ## Passou quando
 
 Todos os itens abaixo são seus para conferir, antes de me chamar:

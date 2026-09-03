@@ -70,6 +70,17 @@ Um Pull Request, com issue aberta antes. Cole o link num comentário da tarefa, 
 
 Uma coisa que eu preciso que você cuide desde já: **a chave da API não entra no PR em lugar nenhum**. Ela mora numa variável de ambiente, e os comandos que você colar mostram `$MINHA_CHAVE`, e não o valor. Isso vira reflexo aqui e te salva no módulo 7.
 
+**A prova deste módulo.** Cole no corpo do PR, para cada um dos quatro erros, o comando e a resposta inteira. O formato é este:
+
+```bash
+curl -i -H "Authorization: Bearer $MINHA_CHAVE" "https://api.exemplo.com/recurso/1"
+curl -i "https://api.exemplo.com/recurso/1"
+```
+
+A primeira é a chamada autenticada que funciona; a segunda é a mesma sem o header, e é o seu `401`. O `-i` é o que faz o `curl` mostrar os cabeçalhos junto com o corpo — sem ele você não vê o status, e o status é metade do que eu quero ler.
+
+Repare que o que vai colado é `$MINHA_CHAVE`, e nunca o valor. Rode com a variável exportada e o próprio comando já sai seguro para colar.
+
 ## Passou quando
 
 Todos os itens abaixo são seus para conferir, antes de me chamar:

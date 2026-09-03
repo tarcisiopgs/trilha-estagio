@@ -71,6 +71,15 @@ São 5 PRs, um por bug. Cole os links dos 5 num comentário da tarefa, confira o
 
 Os três bugs plantados estão em [`exercicios/02-bugs-plantados.js`](../exercicios/02-bugs-plantados.js), aqui mesmo neste repositório — pode começar por eles sem me esperar. Os outros dois são bugs que apareceram no seu caminho, e eles vão aparecer.
 
+**A prova deste módulo.** Em cada PR, cole a saída de:
+
+```bash
+node <caminho do arquivo de bugs plantados no seu repo>; echo "saiu com: $?"
+git log --oneline
+```
+
+O primeiro mostra o arquivo dos bugs plantados rodando limpo no fim, com `saiu com: 0`. O segundo é o que sustenta o critério mais importante daqui: dá para ver o commit da hipótese vindo **antes** do commit da correção. Aponte os dois hashes no texto do PR.
+
 ## Passou quando
 
 Todos os itens abaixo são seus para conferir, antes de me chamar:

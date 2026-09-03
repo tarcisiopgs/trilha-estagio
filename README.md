@@ -20,6 +20,8 @@ wsl --install
 
 Depois disso, **todo** o trabalho da trilha acontece dentro do WSL: terminal, arquivos, Git, editor. O VS Code tem a extensão "WSL", que te deixa editar normalmente pela janela do Windows com tudo rodando do lado Linux. Uma regra que evita dor de cabeça: guarde os projetos dentro do sistema de arquivos do Linux (`~/projetos`, por exemplo) e não em `/mnt/c/...` — do outro lado da fronteira as permissões se comportam de um jeito estranho e o disco fica lento.
 
+Para conferir de que lado você está, a qualquer momento, roda `uname -s`: precisa devolver `Linux`. Caso volte `MINGW64` ou parecido, você está no Git Bash, que de longe parece o WSL e não é.
+
 Caso trave nessa parte, me chama na hora. Ambiente quebrado não é conteúdo de módulo, é pré-requisito, e não faz sentido você queimar tempo de estudo nisso.
 
 ## Como a trilha funciona
@@ -78,8 +80,16 @@ E ele pode voltar. Caso falte alguma coisa, eu movo para **Recusadas** e escrevo
 
 **Onde a entrega fica, por módulo:**
 
-- **Módulo 0** — comentário na própria tarefa do Todoist, sem anexar arquivo nenhum: o script fica instalado na sua máquina e as notas são suas. É o único módulo assim, porque nesse ponto você ainda não tem repositório (e é o módulo 1 que resolve isso). Caso você já tenha criado um repositório antes da hora, pode versionar o script por lá e só comentar o link.
+- **Módulo 0** — comentário na própria tarefa do Todoist, sem anexar arquivo nenhum: o script fica instalado na sua máquina e as notas são suas. É o único módulo assim, porque nesse ponto você ainda não tem repositório — e não é para criar um antes da hora: Git é o módulo 1, e o script do módulo 0 é justamente a primeira coisa que vai versionada para lá.
 - **Módulos 1 ao 10** — Pull Request no seu repositório, e o link do PR num comentário da tarefa.
+
+E aí vale uma divisão que não muda mais até o fim da trilha: **o Pull Request é a entrega, o Todoist é a conversa.**
+
+O que prova que a coisa funciona — saída de comando, print, resultado de query, link do que está no ar — vai colado no corpo do PR. É lá que eu reviso, é lá que dá para comentar numa linha específica, e é lá que fica o histórico depois que o estágio acabar. Cada módulo tem, no "Como entregar", o bloco de comandos cuja saída eu quero ver.
+
+No comentário da tarefa vai o link do PR e o que você quiser conversar comigo: uma decisão que você tomou e quer explicar, uma dúvida, um trecho que ficou te incomodando, um caminho que você tentou e abandonou. Isso é conversa, e conversa não fica boa dentro de commit.
+
+Os dois lugares têm função, e não é a mesma. Código e prova no GitHub; contexto e dúvida no Todoist.
 
 Os nossos encontros continuam existindo, mas mudaram de função: eles são para **destravar, revisar junto e conversar sobre carreira** — não para entregar. Caso você chegue no encontro com o módulo já entregue, a gente usa o tempo para a parte boa, que é discutir as decisões que você tomou.
 

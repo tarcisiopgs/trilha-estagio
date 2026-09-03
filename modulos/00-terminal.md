@@ -43,6 +43,8 @@ Tem um segundo motivo, mais silencioso: quem não enxerga arquivo oculto no term
 **Processos e portas**
 - Descobrir o que está ocupando a porta 3000
 - Matar um processo travado (`lsof`, `kill`)
+- A diferença entre `kill` e `kill -9`. O primeiro **pede** para o processo terminar, e ele ainda consegue fechar arquivo, salvar estado e liberar a porta direito; o segundo arranca da tomada e não dá essa chance. Comece sempre pelo `kill` normal — o `-9` é para quando ele ignorou o pedido
+- Quando o `sudo` é mesmo necessário aqui: para matar um processo que é seu, não é. Caso você esteja precisando de `sudo` para mexer no seu próprio `node`, provavelmente subiu ele com `sudo` antes, e é esse o problema a resolver
 
 **Versão de runtime**
 - O que é um gerenciador de versão (nvm, mise, asdf) e, principalmente, **por que** ele existe. Aqui é só o conceito — você vai usar de verdade no módulo 5.
@@ -62,6 +64,8 @@ A parte que importa aqui não é o que o script faz, é **como ele fica instalad
 - `~/bin` está no seu `PATH`, configurado no `.bashrc` (ou `.zshrc`), e não só exportado na mão
 - você chama ele **pelo nome, de qualquer diretório**, sem `bash` na frente e sem `./`
 - o diretório de origem vem de fora do script: por argumento, ou por uma variável de ambiente com um padrão sensato
+
+**Caso você nunca tenha ouvido falar do `~/bin`:** é uma pasta na sua casa onde ficam os comandos que são só seus. Ela cumpre, para você, o mesmo papel que o `/usr/bin` cumpre para os comandos que vieram com o sistema — e é justamente por isso que colocar ela no `PATH` faz o terminal encontrar o que está lá dentro. Ou seja, o que mora ali é **o script**: um arquivo, executável, chamado pelo nome. Não é lugar de projeto, de anotação nem da estrutura de pastas do seu estudo — isso mora onde você quiser, menos ali.
 
 Repare que esse desenho exercita as quatro coisas do módulo de um jeito que não dá para escapar: sem `chmod +x` ele não roda, sem `PATH` ele não é encontrado, sem tratar caminho direito ele quebra quando você chama de outra pasta, e sem variável você não consegue mudar a origem sem editar o código.
 
@@ -112,23 +116,25 @@ A entrega é **um comentário na tarefa do módulo 0, no Todoist**. Não precisa
 
 **Primeira:** a sua resposta da pergunta 3 acima — o que estava ocupando a porta 3000, como você descobriu e como você liberou — com a saída dos comandos colada.
 
-**Segunda:** a saída destes dois comandos:
+**Segunda:** a saída destes três comandos, colada como veio. É ela que prova que a instalação está de pé — e ela não mente:
 
 ```bash
 which backup-estudo
-```
-
-```bash
+ls -l ~/bin/backup-estudo
 cd /tmp && backup-estudo ~/algum-diretorio; echo "saiu com: $?"
 ```
 
 (troque `backup-estudo` pelo nome que você deu ao seu script)
 
+Rode os três de uma vez, num terminal aberto do zero, e cole a saída inteira. Caso o último não termine com `saiu com: 0`, ainda não está pronto — e é melhor você descobrir isso agora do que eu descobrir na revisão.
+
 **Terceira:** poucas linhas dizendo o que você registrou no seu arquivo de notas. Não precisa listar comando por comando.
 
 Feito isso, você mesmo confere o "passou quando" abaixo, item por item, e move a tarefa para **Em revisão**. Aí é comigo.
 
-Caso você já tenha criado um repositório antes da hora, pode versionar o script por lá e só comentar o link na tarefa.
+**Não crie repositório para este módulo.** Git é o módulo 1, e ele vem depois deste de propósito: o repositório nasce lá, e um dos itens do "passou quando" de lá é justamente versionar este script. Ou seja, ele vai para o GitHub — só não agora.
+
+Quando esse momento chegar, sobe o arquivo por `git add` e `git push`, e **não** pela interface web do GitHub. A web não carrega a permissão de execução junto: o arquivo chega lá sem o `x` que você acabou de configurar, e o `chmod +x` que você fez na sua máquina não vale para quem clonar depois.
 
 ## Passou quando
 
@@ -142,7 +148,7 @@ Todos os itens abaixo são seus para conferir, antes de me chamar:
 - [ ] O script faz o que promete: depois de rodar, dá para ver o efeito dele no disco
 - [ ] O script do item 2 roda: cria `~/meus arquivos/saida`, os `.txt` chegam lá dentro e a mensagem do fim mostra o caminho completo — e as notas dizem quais eram os três pontos que quebravam, qual era a raiz comum e como você chegou nela
 - [ ] As notas existem na sua máquina, no formato "comando — o que faz — quando eu usaria", e o comentário na tarefa diz, em poucas linhas, o que você registrou nelas
-- [ ] O comentário na tarefa responde a pergunta 3 — o que estava ocupando a porta 3000, como você descobriu e como liberou — com a saída dos comandos colada, mais a saída dos dois comandos de instalação
+- [ ] O comentário na tarefa responde a pergunta 3 — o que estava ocupando a porta 3000, como você descobriu e como liberou — com a saída dos comandos colada, mais a saída dos três comandos de instalação
 
 ## Onde estudar
 

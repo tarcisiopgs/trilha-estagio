@@ -70,6 +70,16 @@ Esse módulo tem uma entrega que depende de outra pessoa, e de propósito: **o o
 
 Cole o link do PR e o link da aplicação no ar num comentário da tarefa, confira o "passou quando" e mova para **Em revisão**.
 
+**A prova deste módulo.** Cole no corpo do PR o link da aplicação no ar e a saída de:
+
+```bash
+docker compose down -v
+docker compose up -d
+docker compose ps
+```
+
+Rodados nessa ordem: o `-v` apaga os volumes, então o que sobe depois sobe mesmo do zero. Depois disso, mostre o volume fazendo o trabalho dele — grave um dado, rode `docker compose restart`, leia o dado de novo, e cole o antes e o depois.
+
 ## Passou quando
 
 Todos os itens abaixo são seus para conferir, antes de me chamar:
