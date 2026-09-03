@@ -120,7 +120,7 @@ cd /tmp && backup-estudo ~/algum-diretorio; echo "saiu com: $?"
 
 **Terceira:** poucas linhas dizendo o que você registrou no seu arquivo de notas. Não precisa listar comando por comando.
 
-Feito isso, você mesmo confere o "passou quando" abaixo, marca os itens no Todoist e move a tarefa para **Em revisão**. Aí é comigo.
+Feito isso, você mesmo confere o "passou quando" abaixo, item por item, e move a tarefa para **Em revisão**. Aí é comigo.
 
 Caso você já tenha criado um repositório antes da hora, pode versionar o script por lá e só comentar o link na tarefa.
 

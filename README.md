@@ -2,7 +2,9 @@
 
 Esse repositório é o programa de estudo do seu estágio. Ele diz o que estudar, em que ordem e como a gente vai saber que você aprendeu de verdade.
 
-O acompanhamento do seu progresso não fica aqui — fica no Todoist, no projeto que eu compartilhei com você. Aqui mora o conteúdo.
+O acompanhamento do seu progresso não fica aqui — fica no Todoist, no projeto que eu compartilhei com você. Lá é só o andamento: em que módulo você está e quando você me chama.
+
+**Este repositório é a fonte da verdade.** O que estudar, o que entregar, como entregar e o "passou quando" de cada módulo estão aqui, e só aqui. Caso alguma coisa no Todoist pareça dizer outra coisa, o que vale é o que está escrito no módulo — e me avisa, que eu corrijo.
 
 ## Antes do módulo 0: a sua máquina
 
@@ -72,11 +74,11 @@ Na prática o fluxo é esse, no quadro do Todoist:
 
 Ou seja: **"Em revisão" é o seu jeito de me chamar.** Não precisa mandar mensagem, não precisa esperar sábado, e não precisa pedir licença para mover — moveu, eu recebo. Enquanto eu não passar para "Feito", esse módulo ainda está aberto.
 
-E ele pode voltar. Caso falte alguma coisa, eu movo para **Recusadas** e escrevo na tarefa exatamente o que faltou — nunca um "não passou" seco. Naturalmente isso não é castigo nem nota baixa: é o mesmo que acontece quando um PR volta com pedido de mudança, que é o dia a dia de qualquer time. Você corrige, marca os itens que ficaram abertos e move de volta para "Em revisão".
+E ele pode voltar. Caso falte alguma coisa, eu movo para **Recusadas** e escrevo na tarefa exatamente o que faltou — nunca um "não passou" seco. Naturalmente isso não é castigo nem nota baixa: é o mesmo que acontece quando um PR volta com pedido de mudança, que é o dia a dia de qualquer time. Você corrige o que faltou e move de volta para "Em revisão".
 
 **Onde a entrega fica, por módulo:**
 
-- **Módulo 0** — comentário na própria tarefa do Todoist, com os arquivos anexados. É o único assim, porque nesse ponto você ainda não tem repositório (e é o módulo 1 que resolve isso). Caso você já tenha criado um repositório antes da hora, pode entregar por lá e só comentar o link.
+- **Módulo 0** — comentário na própria tarefa do Todoist, sem anexar arquivo nenhum: o script fica instalado na sua máquina e as notas são suas. É o único módulo assim, porque nesse ponto você ainda não tem repositório (e é o módulo 1 que resolve isso). Caso você já tenha criado um repositório antes da hora, pode versionar o script por lá e só comentar o link.
 - **Módulos 1 ao 10** — Pull Request no seu repositório, e o link do PR num comentário da tarefa.
 
 Os nossos encontros continuam existindo, mas mudaram de função: eles são para **destravar, revisar junto e conversar sobre carreira** — não para entregar. Caso você chegue no encontro com o módulo já entregue, a gente usa o tempo para a parte boa, que é discutir as decisões que você tomou.

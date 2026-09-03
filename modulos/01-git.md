@@ -64,7 +64,7 @@ O item 2 não é formalidade, tá? Passar pela experiência de "o meu código vo
 1. Crie o repositório no GitHub (pode ser privado) e **me adicione como colaborador**
 2. Faça o trabalho do entregável em branches, com Pull Request — nada direto na `main`
 3. Cole o link do repositório e dos PRs num comentário da tarefa do módulo 1
-4. Confira o "passou quando" abaixo, marque os itens e mova a tarefa para **Em revisão**
+4. Confira o "passou quando" abaixo, item por item, e mova a tarefa para **Em revisão**
 
 Do módulo 2 em diante o passo 1 some e o resto continua igual até o fim da trilha.
 
