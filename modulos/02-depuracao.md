@@ -73,7 +73,9 @@ Um **caderno de bugs**: 5 casos, cada um no seu próprio Pull Request, e cada um
 
 Três desses bugs já estão plantados para você em [`exercicios/02-bugs-plantados.js`](../exercicios/02-bugs-plantados.js), aqui mesmo neste repositório — ou seja, você não precisa esperar nada de mim para começar. Os outros dois são bugs que aparecerem naturalmente no seu caminho, e eles vão aparecer.
 
-Um detalhe importante sobre os plantados: nenhum deles estoura com erro. Os três dão resultado errado em silêncio, que é o tipo de bug mais comum no trabalho de verdade. Então, neles, o "erro na íntegra" do item 2 é a linha `FALHOU ...` que o arquivo imprime, com o esperado e o obtido — e eles **não** vão te dar stack trace nenhum. O stack trace do "passou quando" vem de um dos dois bugs naturais. Caso nenhum deles estoure com erro, provoque um e depure ele como sexto caso só para esse critério: por exemplo, no arquivo dos plantados, troque `pedidoOriginal.itens` por `pedidoOriginal.item` na chamada de `contarItens` e rode.
+Um detalhe importante sobre os plantados: nenhum deles estoura com erro. Os três dão resultado errado em silêncio, que é o tipo de bug mais comum no trabalho de verdade. Então, neles, o "erro na íntegra" do item 2 é a linha `FALHOU ...` que o arquivo imprime, com o esperado e o obtido.
+
+E, como não estoura erro, também não sai stack trace no terminal. Mas a pilha existe do mesmo jeito: quando o código para num breakpoint, o painel **Pilha de chamadas** (*Call Stack*) do VS Code ou do Chrome DevTools mostra exatamente essa sequência, de quem chamou quem até a linha onde você parou. Para o critério do stack trace, pode copiar a pilha de lá. Caso algum bug natural estoure com erro, a pilha que o Node imprime no terminal serve também.
 
 O item 3 é o coração da entrega. Um caderno em que toda hipótese estava certa de primeira é um caderno mal preenchido: quer dizer que você escreveu depois de já saber a resposta.
 
@@ -101,7 +103,7 @@ Todos os itens abaixo são seus para conferir, antes de me chamar:
 - [ ] Em pelo menos um dos 5, a primeira hipótese estava errada, e isso está registrado em vez de apagado
 - [ ] Os três bugs plantados foram encontrados e corrigidos, e o arquivo roda sem erro no fim
 - [ ] Um dos relatos tem um print de breakpoint parado na linha, com os valores das variáveis visíveis
-- [ ] Um dos relatos tem um stack trace colado, aponta qual é a primeira linha que é código seu e explica por que as outras não são. Ele vem de um bug natural, ou de um erro provocado, porque os plantados não estouram
+- [ ] Um dos relatos tem um stack trace colado — do painel de pilha de chamadas num breakpoint, ou de um erro que estourou — apontando qual é a primeira linha que é código seu
 - [ ] Tem um relato com o rastreio de um loop feito na mão: a tabela de variáveis, o valor final que você previu **antes** de rodar, e a saída real
 - [ ] Em pelo menos 3 dos 5 casos você chegou na causa sem IA; nos outros, o relato registra o que foi perguntado e o que você aprendeu com a resposta
 ## Onde estudar
