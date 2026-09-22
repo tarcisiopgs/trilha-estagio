@@ -23,7 +23,19 @@ Dito isso, eu acredito que a diferença entre quem evolui rápido e quem empaca 
 
 **Ler a mensagem de erro — de verdade**
 - Qual arquivo, qual linha, o que a mensagem literalmente está dizendo
-- Stack trace: ler de baixo para cima e achar a primeira linha que é código **seu**
+- Stack trace: a pilha de chamadas que estava ativa quando o erro estourou, uma linha `at ...` por função. No JavaScript ela vem de cima para baixo — a linha de cima é onde o erro estourou, e cada linha abaixo é quem chamou a de cima (em Python é o contrário, e muito conteúdo por aí fala em "ler de baixo para cima" por causa disso)
+- O que você procura nela é a primeira linha que é código **seu**, ou seja, que aponta para um arquivo do seu projeto. Linhas com `node:internal/...` são o próprio Node, `node_modules/...` é biblioteca, e `(<anonymous>)` costuma ser função nativa da linguagem, tipo `JSON.parse`. O erro pode estourar lá dentro, mas quem passou o dado errado para elas foi você — então é na sua linha que a investigação começa
+- Exemplo prático, de um `JSON.parse` recebendo um texto que não é JSON:
+
+  ```text
+  SyntaxError: Expected property name or '}' in JSON at position 2 (line 1 column 3)
+      at JSON.parse (<anonymous>)
+      at lerPedido (/home/voce/estagio/pedido.js:2:15)
+      at Object.<anonymous> (/home/voce/estagio/pedido.js:4:1)
+      at Module._compile (node:internal/modules/cjs/loader:1872:14)
+  ```
+
+  A de cima é nativa, não é sua. A primeira sua é `pedido.js:2:15`, dentro de `lerPedido` — é ali que você vai olhar o que chegou em `texto`. E as de baixo, com `node:internal`, são o Node carregando o seu arquivo
 - Os erros mais comuns e o que eles costumam significar de fato:
   - `undefined is not a function` — você chamou algo que não existe, geralmente por nome errado ou import faltando
   - `cannot read property 'x' of undefined` — o objeto não chegou; ou seja, o problema está *antes*, e não na linha do erro
@@ -61,6 +73,8 @@ Um **caderno de bugs**: 5 casos, cada um no seu próprio Pull Request, e cada um
 
 Três desses bugs já estão plantados para você em [`exercicios/02-bugs-plantados.js`](../exercicios/02-bugs-plantados.js), aqui mesmo neste repositório — ou seja, você não precisa esperar nada de mim para começar. Os outros dois são bugs que aparecerem naturalmente no seu caminho, e eles vão aparecer.
 
+Um detalhe importante sobre os plantados: nenhum deles estoura com erro. Os três dão resultado errado em silêncio, que é o tipo de bug mais comum no trabalho de verdade. Então, neles, o "erro na íntegra" do item 2 é a linha `FALHOU ...` que o arquivo imprime, com o esperado e o obtido — e eles **não** vão te dar stack trace nenhum. O stack trace do "passou quando" vem de um dos dois bugs naturais. Caso nenhum deles estoure com erro, provoque um e depure ele como sexto caso só para esse critério: por exemplo, no arquivo dos plantados, troque `pedidoOriginal.itens` por `pedidoOriginal.item` na chamada de `contarItens` e rode.
+
 O item 3 é o coração da entrega. Um caderno em que toda hipótese estava certa de primeira é um caderno mal preenchido: quer dizer que você escreveu depois de já saber a resposta.
 
 ## Como entregar
@@ -68,8 +82,6 @@ O item 3 é o coração da entrega. Um caderno em que toda hipótese estava cert
 A partir desse módulo entra a issue: **abra uma issue antes de começar cada bug**, dizendo o sintoma, e feche ela pelo PR.
 
 São 5 PRs, um por bug. Cole os links dos 5 num comentário da tarefa, confira o "passou quando" e mova para **Em revisão**.
-
-Os três bugs plantados estão em [`exercicios/02-bugs-plantados.js`](../exercicios/02-bugs-plantados.js), aqui mesmo neste repositório — pode começar por eles sem me esperar. Os outros dois são bugs que apareceram no seu caminho, e eles vão aparecer.
 
 **A prova deste módulo.** Em cada PR, cole a saída de:
 
@@ -89,7 +101,7 @@ Todos os itens abaixo são seus para conferir, antes de me chamar:
 - [ ] Em pelo menos um dos 5, a primeira hipótese estava errada, e isso está registrado em vez de apagado
 - [ ] Os três bugs plantados foram encontrados e corrigidos, e o arquivo roda sem erro no fim
 - [ ] Um dos relatos tem um print de breakpoint parado na linha, com os valores das variáveis visíveis
-- [ ] Um dos relatos aponta, num stack trace colado, qual é a primeira linha que é código seu — e explica por que as de cima não são
+- [ ] Um dos relatos tem um stack trace colado, aponta qual é a primeira linha que é código seu e explica por que as outras não são. Ele vem de um bug natural, ou de um erro provocado, porque os plantados não estouram
 - [ ] Tem um relato com o rastreio de um loop feito na mão: a tabela de variáveis, o valor final que você previu **antes** de rodar, e a saída real
 - [ ] Em pelo menos 3 dos 5 casos você chegou na causa sem IA; nos outros, o relato registra o que foi perguntado e o que você aprendeu com a resposta
 ## Onde estudar
