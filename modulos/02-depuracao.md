@@ -62,7 +62,7 @@ Dito isso, eu acredito que a diferença entre quem evolui rápido e quem empaca 
 
 ## Entregável
 
-Um **caderno de bugs**: 5 casos, cada um no seu próprio Pull Request, e cada um com:
+Um **caderno de bugs**: um relato por bug, cada um no seu próprio Pull Request, e cada um com:
 
 1. o que aconteceu (o sintoma)
 2. a mensagem de erro, na íntegra
@@ -71,19 +71,23 @@ Um **caderno de bugs**: 5 casos, cada um no seu próprio Pull Request, e cada um
 5. a causa real
 6. a correção
 
-Três desses bugs já estão plantados para você em [`exercicios/02-bugs-plantados.js`](../exercicios/02-bugs-plantados.js), aqui mesmo neste repositório — ou seja, você não precisa esperar nada de mim para começar. Os outros dois são bugs que aparecerem naturalmente no seu caminho, e eles vão aparecer.
+Três bugs já estão plantados para você em [`exercicios/02-bugs-plantados.js`](../exercicios/02-bugs-plantados.js), aqui mesmo neste repositório — ou seja, você não precisa esperar nada de mim para começar. Esses três são o mínimo.
+
+Além deles, caso apareça algum bug no seu caminho enquanto você estuda, documenta ele do mesmo jeito, que é treino de verdade. Mas não precisa forçar: se não aparecer nenhum, tá tudo bem, a entrega fecha com os três plantados.
 
 Um detalhe importante sobre os plantados: nenhum deles estoura com erro. Os três dão resultado errado em silêncio, que é o tipo de bug mais comum no trabalho de verdade. Então, neles, o "erro na íntegra" do item 2 é a linha `FALHOU ...` que o arquivo imprime, com o esperado e o obtido.
 
 E, como não estoura erro, também não sai stack trace no terminal. Mas a pilha existe do mesmo jeito: quando o código para num breakpoint, o painel **Pilha de chamadas** (*Call Stack*) do VS Code ou do Chrome DevTools mostra exatamente essa sequência, de quem chamou quem até a linha onde você parou. Para o critério do stack trace, pode copiar a pilha de lá. Caso algum bug natural estoure com erro, a pilha que o Node imprime no terminal serve também.
 
-O item 3 é o coração da entrega. Um caderno em que toda hipótese estava certa de primeira é um caderno mal preenchido: quer dizer que você escreveu depois de já saber a resposta.
+O item 3 é o coração da entrega. A hipótese é o que você **acha** antes de mexer — "eu acho que a contagem está perdendo um item; caso seja isso, o total deve vir 3 em vez de 5" —, e não a descrição da correção depois de pronta. Acertar de primeira não tem problema nenhum. Agora, caso a primeira hipótese esteja errada, registra ela em vez de apagar: é informação boa, e mostra o caminho que você fez.
 
 ## Como entregar
 
 A partir desse módulo entra a issue: **abra uma issue antes de começar cada bug**, dizendo o sintoma, e feche ela pelo PR.
 
-São 5 PRs, um por bug. Cole os links dos 5 num comentário da tarefa, confira o "passou quando" e mova para **Em revisão**.
+É um PR por bug, entregues um a um, e não tudo junto num PR só. Coloque o link da issue na descrição do PR (`closes #<número>`) para ela fechar sozinha no merge, e **me marque como revisor**: eu reviso e faço o merge. A lógica é a mesma de qualquer time — quem encontrou o problema e resolveu não deveria ser também quem diz que está certo.
+
+Os relatos podem ficar como arquivos Markdown dentro da pasta do módulo no seu repositório, do mesmo jeito que você fez nos módulos 0 e 1. Quando terminar, cole os links dos PRs num comentário da tarefa, confira o "passou quando" e mova para **Em revisão**.
 
 **A prova deste módulo.** Em cada PR, cole a saída de:
 
@@ -92,20 +96,21 @@ node <caminho do arquivo de bugs plantados no seu repo>; echo "saiu com: $?"
 git log --oneline
 ```
 
-O primeiro mostra o arquivo dos bugs plantados rodando limpo no fim, com `saiu com: 0`. O segundo é o que sustenta o critério mais importante daqui: dá para ver o commit da hipótese vindo **antes** do commit da correção. Aponte os dois hashes no texto do PR.
+O primeiro mostra o arquivo dos bugs plantados rodando limpo no fim, com `saiu com: 0`. O segundo mostra a sequência dos seus commits.
+
+O ideal é a hipótese entrar num commit só dela, **antes** do commit da correção: primeiro o relato com o que você acha, depois o código que corrige. Assim o histórico conta a história na ordem em que ela aconteceu, que é a proposta do Git. Sendo bem honesto, pouca gente trabalha assim no dia a dia, então não é obrigatório — caso o relato e a correção entrem juntos, tudo bem. Mas é massa você já ir pegando o hábito.
 
 ## Passou quando
 
 Todos os itens abaixo são seus para conferir, antes de me chamar:
 
-- [ ] Os 5 relatos estão completos, cada um com sintoma, erro na íntegra, hipótese, teste da hipótese, causa real e correção
-- [ ] **Em cada relato, a hipótese está escrita num commit anterior ao commit da correção** — dá para provar isso pelo histórico, e é isso que separa hipótese de racionalização
-- [ ] Em pelo menos um dos 5, a primeira hipótese estava errada, e isso está registrado em vez de apagado
+- [ ] Cada relato está completo, com sintoma, erro na íntegra, hipótese, teste da hipótese, causa real e correção
+- [ ] Cada bug tem a sua issue e o seu PR, com a issue vinculada no PR e eu marcado como revisor
 - [ ] Os três bugs plantados foram encontrados e corrigidos, e o arquivo roda sem erro no fim
 - [ ] Um dos relatos tem um print de breakpoint parado na linha, com os valores das variáveis visíveis
 - [ ] Um dos relatos tem um stack trace colado — do painel de pilha de chamadas num breakpoint, ou de um erro que estourou — apontando qual é a primeira linha que é código seu
 - [ ] Tem um relato com o rastreio de um loop feito na mão: a tabela de variáveis, o valor final que você previu **antes** de rodar, e a saída real
-- [ ] Em pelo menos 3 dos 5 casos você chegou na causa sem IA; nos outros, o relato registra o que foi perguntado e o que você aprendeu com a resposta
+- [ ] A IA só entrou depois da sua hipótese, e a meta é resolver a maior parte dos bugs sem ela. Caso algum tenha precisado de IA — tem bug que depende muito de contexto —, o relato conta com as suas palavras o que você perguntou, o que ela explicou e o que você concluiu com isso, e não só o prompt e a resposta
 ## Onde estudar
 
 - [Chrome DevTools — depurar JavaScript](https://developer.chrome.com/docs/devtools/javascript) — leia **e** faça o passo a passo junto
