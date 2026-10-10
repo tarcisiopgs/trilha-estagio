@@ -74,8 +74,6 @@ Um Pull Request, com issue aberta antes. Cole o link num comentário da tarefa, 
 
 Ela só faz sentido quando vocês dois estiverem caminhando no mesmo módulo, e eu aviso quando for o caso. Aí, antes de me chamar, você pede uma revisão para o outro estagiário e responde o que ele levantar. Não é para ele aprovar no seu lugar — é para você passar pela experiência de ler o código de outra pessoa e de ter o seu lido. Eu reviso depois dele.
 
-Isso vale também para os módulos seguintes: onde o "Como entregar" falar em revisão cruzada, leia com essa mesma condição.
-
 **A prova deste módulo.** Cole no corpo do PR a saída de criar o banco **do zero, num banco vazio**, e populá-lo — no cliente que você estiver usando:
 
 ```bash

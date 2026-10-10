@@ -65,7 +65,7 @@ Uma aplicação pequena, mas completa, que consome a API que você usou no módu
 
 ## Como entregar
 
-Um Pull Request, com issue aberta antes e revisão cruzada do outro estagiário.
+Um Pull Request, com issue aberta antes.
 
 **A partir desse módulo entra o CI:** configure lint e teste rodando no PR, e o verde passa a ser pré-requisito para eu revisar. Ou seja, PR vermelho eu nem abro — o que também vale no mundo real.
 

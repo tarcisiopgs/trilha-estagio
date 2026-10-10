@@ -72,7 +72,7 @@ O item 5 é o que fecha o ciclo. É quando você percebe que decisão tomada no 
 
 ## Como entregar
 
-Um Pull Request, com issue aberta antes, revisão cruzada e CI verde.
+Um Pull Request, com issue aberta antes e CI verde.
 
 Como aqui o frontend do módulo 6 passa a consumir a sua API, eu preciso de dois links no comentário da tarefa: o do PR do backend e o do PR do frontend que fez a troca.
 
