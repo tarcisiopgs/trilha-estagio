@@ -113,7 +113,7 @@ Por mais que pareça burocracia no começo, não é. Você vai abrir dezenas de 
 |---|---|
 | 1 | repositório, branch, PR, review |
 | 2 | issue antes do PR; a descrição diz o que ficou faltando |
-| 4 | revisão cruzada entre vocês, além da minha |
+| 4 | revisão cruzada entre vocês, além da minha — só quando os dois estiverem no mesmo módulo, e eu aviso |
 | 6 | CI rodando lint e teste no PR — o verde vira pré-requisito do meu review |
 | 8 | CI sério, e deploy entra na conversa |
 

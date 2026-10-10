@@ -63,7 +63,7 @@ Um PR com três partes:
 
 ## Como entregar
 
-Um Pull Request, com issue aberta antes e revisão cruzada do outro estagiário. Cole o link num comentário da tarefa, confira o "passou quando" e mova para **Em revisão**.
+Um Pull Request, com issue aberta antes. Cole o link num comentário da tarefa, confira o "passou quando" e mova para **Em revisão**.
 
 **A prova deste módulo.** Cole no corpo do PR a saída de:
 

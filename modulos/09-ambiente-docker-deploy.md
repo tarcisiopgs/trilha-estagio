@@ -64,7 +64,7 @@ Agora você tem uma API (módulo 7), um banco modelado (módulo 4) e o terminal 
 
 ## Como entregar
 
-Um Pull Request, com issue aberta antes, revisão cruzada e CI verde.
+Um Pull Request, com issue aberta antes e CI verde.
 
 Esse módulo tem uma entrega que depende de outra pessoa, e de propósito: **o outro estagiário vai clonar o seu projeto e seguir o seu README, sem te perguntar nada**, e comentar no seu PR o que aconteceu. Se ele travar, o README ainda não está pronto — e naturalmente você faz o mesmo pelo dele.
 

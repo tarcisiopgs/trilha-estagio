@@ -61,7 +61,7 @@ O item 4 é o mais importante do módulo, e eu preciso que você faça exatament
 
 ## Como entregar
 
-Um Pull Request, com issue aberta antes, revisão cruzada e CI verde.
+Um Pull Request, com issue aberta antes e CI verde.
 
 Aqui o CI deixa de ser enfeite: ele roda os testes a cada PR, e a partir desse módulo eu considero o vermelho um bloqueio, não um aviso.
 
